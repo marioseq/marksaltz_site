@@ -158,7 +158,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 .hero-paintings{position:absolute;inset:0;pointer-events:none}
 .hero-layer{
-  position:absolute;inset:0;margin:0;opacity:0;
+  position:absolute;inset:0;margin:0;opacity:0;pointer-events:none;color:inherit;text-decoration:none;
   will-change:transform,opacity;transform-origin:center center;
 }
 .hero-layer img{width:100%;height:100%;object-fit:cover;display:block}
@@ -176,7 +176,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   padding:88px clamp(20px,6vw,88px) clamp(44px,8vh,84px);
   opacity:0;pointer-events:none;text-shadow:var(--tshadow);
 }
-.band.is-active{pointer-events:auto}
+.band.is-active{pointer-events:none}
+.band .band-actions{pointer-events:auto}
 .band::before{
   content:"";position:absolute;inset:-4%;pointer-events:none;z-index:-1;
   opacity:calc(.28 + .72 * var(--k,1));
@@ -290,9 +291,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .hero.is-static{height:auto;min-height:86svh}
 .hero.is-static .hero-stage{position:relative;height:auto;min-height:86svh;display:flex;align-items:flex-end}
 .hero.is-static .hero-layer{display:none}
-.hero.is-static .hero-layer[data-layer="0"]{display:block;opacity:1;transform:none}
+.hero.is-static .hero-layer[data-layer="0"]{display:block;opacity:1;transform:none;pointer-events:auto}
 .hero.is-static .hero-bands,.hero.is-static .hero-spine,.hero.is-static .scroll-cue{display:none}
 .hero.is-static .static-hero-block{
+  pointer-events:none;
   display:block;position:relative;z-index:4;width:100%;
   padding:120px clamp(20px,6vw,72px) 56px;text-shadow:var(--tshadow);
 }
@@ -304,6 +306,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   font-family:var(--display);font-weight:300;
   font-size:clamp(38px,8vw,68px);line-height:1.05;margin:0 0 14px;max-width:15ch;
 }
+.hero.is-static .static-hero-block a,.hero.is-static .static-hero-block button{pointer-events:auto}
 .static-hero-block .chip{max-width:100%}
 @media(max-width:480px){.chip{font-size:10.5px;letter-spacing:.05em;border-radius:10px}}
 .hero.is-static .static-hero-block p.band-sub{
@@ -313,10 +316,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .hero{height:auto;min-height:86svh}
   .hero-stage{position:relative;height:auto;min-height:86svh;display:flex;align-items:flex-end}
   .hero-layer{display:none}
-  .hero-layer[data-layer="0"]{display:block;opacity:1;transform:none}
+  .hero-layer[data-layer="0"]{display:block;opacity:1;transform:none;pointer-events:auto}
   .hero-bands,.hero-spine,.scroll-cue{display:none}
-  .static-hero-block{display:block;position:relative;z-index:4;width:100%;padding:120px clamp(20px,6vw,72px) 56px;text-shadow:var(--tshadow)}
+  .static-hero-block{pointer-events:none;display:block;position:relative;z-index:4;width:100%;padding:120px clamp(20px,6vw,72px) 56px;text-shadow:var(--tshadow)}
   .static-hero-block::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 85% 75% at 28% 72%,rgba(8,10,11,.82) 0%,rgba(8,10,11,.56) 54%,rgba(8,10,11,0) 85%)}
+  .static-hero-block a,.static-hero-block button{pointer-events:auto}
   .static-hero-block h1{font-family:var(--display);font-weight:300;font-size:clamp(38px,8vw,68px);line-height:1.05;margin:0 0 14px;max-width:15ch}
   .static-hero-block p.band-sub{font-size:17px;line-height:1.5;max-width:44ch;margin:0;color:var(--text-primary)}
 }
@@ -411,7 +415,7 @@ main{position:relative;z-index:2;background:var(--canvas)}
 @media(max-width:680px){.human-gauge,.scale-note,.works-controls .seg-group:first-child{display:none}}
 
 .wall-items{flex:1;display:flex;flex-wrap:wrap;align-items:flex-end;gap:36px 26px}
-.work-card{margin:0;display:flex;flex-direction:column;transition:opacity .3s ease,transform .3s ease}
+.work-card{scroll-margin-top:100px;margin:0;display:flex;flex-direction:column;transition:opacity .3s ease,transform .3s ease}
 .work-card[hidden]{display:none}
 .work-frame{
   position:relative;display:block;padding:0;border:1px solid var(--border-ui);
@@ -576,31 +580,31 @@ body.lb-open{overflow:hidden}
 
 <section class="hero" id="top" aria-label="Featured works">
   <div class="hero-stage" id="heroStage">
-    <div class="hero-paintings" aria-hidden="true">
-      <figure class="hero-layer" data-layer="0">
+    <div class="hero-paintings">
+      <a class="hero-layer" data-layer="0" href="#work-03" aria-label="View Untitled, 2022, MS148 in Selected Works" tabindex="0" aria-hidden="false">
         <picture>
           <source type="image/webp" srcset="assets/img/03-480.webp 480w, assets/img/03-760.webp 760w, assets/img/03.webp 894w" sizes="100vw">
           <img src="assets/img/03-760.jpg" srcset="assets/img/03-480.jpg 480w, assets/img/03-760.jpg 760w, assets/img/03.jpg 894w" sizes="100vw" width="894" height="1050" alt="" fetchpriority="high" decoding="sync">
         </picture>
-      </figure>
-      <figure class="hero-layer" data-layer="1">
+      </a>
+      <a class="hero-layer" data-layer="1" href="#work-09" aria-label="View Untitled, 2017, MS097 in Selected Works" tabindex="-1" aria-hidden="true">
         <picture>
           <source type="image/webp" data-srcset="assets/img/09.webp">
           <img data-src="assets/img/09.jpg" width="687" height="769" alt="" decoding="async">
         </picture>
-      </figure>
-      <figure class="hero-layer" data-layer="2">
+      </a>
+      <a class="hero-layer" data-layer="2" href="#work-07" aria-label="View Untitled, 2005 in Selected Works" tabindex="-1" aria-hidden="true">
         <picture>
           <source type="image/webp" data-srcset="assets/img/07.webp">
           <img data-src="assets/img/07.jpg" width="1050" height="712" alt="" decoding="async">
         </picture>
-      </figure>
-      <figure class="hero-layer" data-layer="3">
+      </a>
+      <a class="hero-layer" data-layer="3" href="#work-02" aria-label="View Untitled, 2022, MS146 in Selected Works" tabindex="-1" aria-hidden="true">
         <picture>
           <source type="image/webp" data-srcset="assets/img/02.webp">
           <img data-src="assets/img/02.jpg" width="1050" height="915" alt="" decoding="async">
         </picture>
-      </figure>
+      </a>
     </div>
 
     <div class="scrim" aria-hidden="true"></div>
@@ -765,7 +769,7 @@ body.lb-open{overflow:hidden}
               </figcaption>
             </figure>
 
-            <figure class="work-card" data-era="2020s" data-idx="1" style="--ar:1050/915;--w-in:54">
+            <figure class="work-card" data-era="2020s" data-idx="1" id="work-02" style="--ar:1050/915;--w-in:54">
               <button type="button" class="work-frame" data-full="assets/img/02.webp" data-full-fb="assets/img/02.jpg" data-w="1050" data-h="915" aria-label="View Untitled, 2022, MS146">
                 <picture>
                   <source type="image/webp" srcset="assets/img/02-480.webp 480w, assets/img/02-760.webp 760w, assets/img/02.webp 1050w" sizes="(max-width:680px) 92vw, 340px">
@@ -779,7 +783,7 @@ body.lb-open{overflow:hidden}
               </figcaption>
             </figure>
 
-            <figure class="work-card" data-era="2020s" data-idx="2" style="--ar:894/1050;--w-in:49">
+            <figure class="work-card" data-era="2020s" data-idx="2" id="work-03" style="--ar:894/1050;--w-in:49">
               <button type="button" class="work-frame" data-full="assets/img/03.webp" data-full-fb="assets/img/03.jpg" data-w="894" data-h="1050" aria-label="View Untitled, 2022, MS148">
                 <picture>
                   <source type="image/webp" srcset="assets/img/03-480.webp 480w, assets/img/03-760.webp 760w, assets/img/03.webp 894w" sizes="(max-width:680px) 92vw, 320px">
@@ -835,7 +839,7 @@ body.lb-open{overflow:hidden}
               </figcaption>
             </figure>
 
-            <figure class="work-card" data-era="2000s" data-idx="6" style="--ar:1050/712;--w-in:62">
+            <figure class="work-card" data-era="2000s" data-idx="6" id="work-07" style="--ar:1050/712;--w-in:62">
               <button type="button" class="work-frame" data-full="assets/img/07.webp" data-full-fb="assets/img/07.jpg" data-w="1050" data-h="712" aria-label="View Untitled, 2005">
                 <picture>
                   <source type="image/webp" srcset="assets/img/07-480.webp 480w, assets/img/07-760.webp 760w, assets/img/07.webp 1050w" sizes="(max-width:680px) 92vw, 360px">
@@ -863,7 +867,7 @@ body.lb-open{overflow:hidden}
               </figcaption>
             </figure>
 
-            <figure class="work-card" data-era="2000s" data-idx="8" style="--ar:687/769;--w-in:63">
+            <figure class="work-card" data-era="2000s" data-idx="8" id="work-09" style="--ar:687/769;--w-in:63">
               <button type="button" class="work-frame" data-full="assets/img/09.webp" data-full-fb="assets/img/09.jpg" data-w="687" data-h="769" aria-label="View Untitled, 2017, MS097">
                 <picture>
                   <source type="image/webp" srcset="assets/img/09-480.webp 480w, assets/img/09-760.webp 760w, assets/img/09.webp 687w" sizes="(max-width:680px) 92vw, 380px">
@@ -1401,6 +1405,13 @@ body.lb-open{overflow:hidden}
       }
     }
 
+    layers.forEach((ly, i) => {
+      const isActiveLayer = i === activeIdx;
+      ly.style.pointerEvents = isActiveLayer ? 'auto' : 'none';
+      ly.tabIndex = isActiveLayer ? 0 : -1;
+      ly.setAttribute('aria-hidden', String(!isActiveLayer));
+    });
+
     if(activeIdx !== lastDotIdx){
       lastDotIdx = activeIdx;
       dots.forEach((d, di) => d.classList.toggle('active', di === activeIdx));
@@ -1462,6 +1473,11 @@ body.lb-open{overflow:hidden}
     const isStatic = shouldBeStatic();
     heroEl.classList.toggle('is-static', isStatic);
     if(isStatic){
+      layers.forEach((ly, i) => {
+        ly.style.pointerEvents = i === 0 ? 'auto' : 'none';
+        ly.tabIndex = i === 0 ? 0 : -1;
+        ly.setAttribute('aria-hidden', String(i !== 0));
+      });
       if(rafId !== null){ cancelAnimationFrame(rafId); rafId = null; lastTick = 0; }
       if(loadRaf !== null){ cancelAnimationFrame(loadRaf); loadRaf = null; }
       loadK = 1;
