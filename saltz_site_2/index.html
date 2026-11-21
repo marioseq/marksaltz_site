@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark Saltz Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a gallery wall. Panels drawn to one common scale, 1 inch = 3px, grouped by year. */
+:root{
+  --bg:#f3f1ec;
+  --ink:#1d1f22;
+  --muted:#6a6d72;
+  --line:#d8d4ca;
+  --panel:#c9c4b8;
+  --accent:#8a3b2a;
+  --k:3px;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16171a;--ink:#ecebe6;--muted:#9a9ca1;--line:#33353a;--panel:#2c2e33;--accent:#e08a74;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16171a;--ink:#ecebe6;--muted:#9a9ca1;--line:#33353a;--panel:#2c2e33;--accent:#e08a74;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,8vw,84px);line-height:1;margin:0 0 20px;text-wrap:balance}
+.sub{max-width:60ch;color:var(--muted);margin:0}
+.links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:24px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:500;font-size:28px;margin:0 0 16px;text-wrap:balance}
+.statement{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:800px){.statement{grid-template-columns:260px 1fr;gap:48px}}
+.statement p{max-width:65ch;margin:0 0 14px}
+.facts{list-style:none;margin:0;padding:0;font-size:14px;color:var(--muted)}
+.facts li{padding:8px 0;border-top:1px solid var(--line)}
+.facts b{display:block;color:var(--ink);font-weight:500}
+.year{display:flex;align-items:baseline;gap:16px;margin:36px 0 16px}
+.year h3{font-family:var(--display);font-weight:300;font-size:40px;margin:0;font-variant-numeric:tabular-nums}
+.year span{color:var(--muted);font-size:14px}
+.wall{display:flex;flex-wrap:wrap;gap:32px 24px;align-items:flex-start;margin-top:24px}
+figure{margin:0;max-width:100%}
+.panel{
+  height:260px;aspect-ratio:var(--ar);max-width:100%;
+  background:var(--panel);border:1px solid var(--line);display:block;overflow:hidden
+}
+figcaption{margin-top:8px;font-size:14px;line-height:1.45;max-width:30ch}
+figcaption b{font-weight:500}
+figcaption small{display:block;color:var(--muted);font-size:13px}
+.scale{font-size:13px;color:var(--muted);margin:0 0 8px}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+th,td{text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:500;color:var(--muted)}
+footer{padding:32px 0 56px;color:var(--muted);font-size:14px}
+.panel[role="button"]{cursor:zoom-in;transition:transform .15s ease,border-color .15s ease}
+.panel[role="button"]:hover{border-color:var(--accent);transform:translateY(-2px)}
+.panel[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.panel img{width:100%;height:100%;object-fit:cover;display:block}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:0 0 28px}
+.btn{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.note{font-size:13px;color:var(--muted)}
+.rsec{margin:0 0 32px}
+.rsec h3{font-family:var(--display);font-weight:500;font-size:20px;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.rrow{display:grid;grid-template-columns:5.5em 1fr;gap:4px 16px;padding:5px 0;font-size:15px}
+.rrow .y{color:var(--muted);font-variant-numeric:tabular-nums}
+.rrow ul{list-style:none;margin:0;padding:0}
+.rrow li+li{margin-top:3px}
+.rplain{list-style:none;margin:0;padding:0;font-size:15px}
+.rplain li{padding:4px 0}
+body.lb-open{overflow:hidden}
+.lb{position:fixed;inset:0;z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background:color-mix(in srgb,var(--bg) 94%,#000);touch-action:none;padding:56px 64px 24px}
+.lb.open{display:flex}
+.lb-stage{background:linear-gradient(160deg,var(--panel),color-mix(in srgb,var(--panel) 80%,var(--bg)));
+  border:1px solid var(--line);display:flex;align-items:flex-end;padding:12px;color:var(--muted);font-size:14px;overflow:hidden;
+  font-variant-numeric:tabular-nums}
+.lb-stage img{width:100%;height:100%;object-fit:contain;display:block;margin:-12px;width:calc(100% + 24px);height:calc(100% + 24px)}
+.lb-cap{text-align:center;font-size:15px;line-height:1.45;max-width:60ch}
+.lb-cap small{display:block;color:var(--muted);font-size:13px}
+.lb button{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;line-height:1}
+.lb button:hover{border-color:var(--accent);color:var(--accent)}
+.lb button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.lb-close{position:absolute;top:12px;right:12px}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:10px}
+.lb-next{right:10px}
+.lb-count{position:absolute;top:22px;left:20px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+@media(max-width:600px){.lb{padding:56px 12px 84px}.lb-prev,.lb-next{top:auto;bottom:16px;transform:none}.lb-prev{left:calc(50% - 56px)}.lb-next{right:calc(50% - 56px)}}
+@media(prefers-reduced-motion:reduce){.panel[role="button"]{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="kicker">Painter · Oil on linen · New York</p>
+  <h1>Mark Saltz</h1>
+  <p class="sub">Large oil paintings built from color and light, made through scraping, sanding and repeated passes of pigment.</p>
+  <div class="links">
+    <a href="https://jhbgallery.com/m/artist.php?id=36">Artist page at JHB Gallery</a>
+    <a href="#resume" id="navResume">Resume</a>
+    <a href="#portfolio" id="navPortfolio" hidden>Back to portfolio</a>
+  </div>
+</header>
+<div id="portfolio">
+
+<section aria-labelledby="stmt">
+  <div class="statement">
+    <div>
+      <h2 id="stmt">Statement</h2>
+      <ul class="facts">
+        <li><b>Subject</b>Psychological states of being</li>
+        <li><b>Tied to</b>Time of day, weather, season</li>
+        <li><b>Medium</b>Oil, resin, pigment on linen</li>
+        <li><b>Scale</b>Life-size, large enough to enter</li>
+      </ul>
+    </div>
+    <div>
+      <p>The paintings refer to psychological states of being, and those states follow time of day, weather and season.</p>
+      <p>Saltz builds color and light by repetition. He scrapes, power sands and moves pigment across the surface. The paint is mulled in his own studio and suspended in linseed oil or alkyd resin.</p>
+      <p>The works are made at the scale of a person, big enough to step into. Finished paintings rarely come out in sequence. They can hang alone, or in groups that change how a room feels.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="works">
+  <h2 id="works">Selected works</h2>
+  <p class="scale">Select a work to view it larger. Use the arrows, the keyboard, or swipe to move between works. Sizes in inches, as listed in each file name.</p>
+  <div class="wall">
+    <figure><div class="panel" data-w="845" data-h="1050" data-full="images/01.jpg" style="--ar:563/700"><img src="images/thumb/01.jpg" width="563" height="700" alt="Untitled, 2022, MS147" loading="lazy"></div><figcaption><b>Untitled, 2022</b><small>MS147 · Oil on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="1050" data-h="915" data-full="images/02.jpg" style="--ar:700/610"><img src="images/thumb/02.jpg" width="700" height="610" alt="Untitled, 2022, MS146" loading="lazy"></div><figcaption><b>Untitled, 2022</b><small>MS146 · Oil on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="894" data-h="1050" data-full="images/03.jpg" style="--ar:596/700"><img src="images/thumb/03.jpg" width="596" height="700" alt="Untitled, 2022, MS148" loading="lazy"></div><figcaption><b>Untitled, 2022</b><small>MS148 · 57 × 49 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="838" data-h="1050" data-full="images/04.jpg" style="--ar:559/700"><img src="images/thumb/04.jpg" width="559" height="700" alt="Untitled, 2023" loading="lazy"></div><figcaption><b>Untitled, 2023</b><small>59 × 47 in · Non-objective; oil, dry pigment, alkyd resin on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="911" data-h="1050" data-full="images/05.jpg" style="--ar:607/700"><img src="images/thumb/05.jpg" width="607" height="700" alt="Untitled, 1992" loading="lazy"></div><figcaption><b>Untitled, 1992</b><small>49 × 42.5 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="847" data-h="1050" data-full="images/06.jpg" style="--ar:565/700"><img src="images/thumb/06.jpg" width="565" height="700" alt="Untitled, 2022, MS149" loading="lazy"></div><figcaption><b>Untitled, 2022</b><small>MS149 · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="1050" data-h="712" data-full="images/07.jpg" style="--ar:700/475"><img src="images/thumb/07.jpg" width="700" height="475" alt="Untitled, 2005" loading="lazy"></div><figcaption><b>Untitled, 2005</b><small>44 × 62 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="800" data-h="700" data-full="images/08.jpg" style="--ar:700/613"><img src="images/thumb/08.jpg" width="700" height="613" alt="Untitled, 2023, MS112" loading="lazy"></div><figcaption><b>Untitled, 2023</b><small>MS112 · 63 × 75 in · Oil, alkyd resin, pigment, pre-mulled paint on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="687" data-h="769" data-full="images/09.jpg" style="--ar:625/700"><img src="images/thumb/09.jpg" width="625" height="700" alt="Untitled, 2017, MS097" loading="lazy"></div><figcaption><b>Untitled, 2017</b><small>MS097 · 63 × 75 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small></figcaption></figure>
+    <figure><div class="panel" data-w="1756" data-h="2000" data-full="images/10.jpg" style="--ar:615/700"><img src="images/thumb/10.jpg" width="615" height="700" alt="Untitled, 2021" loading="lazy"></div><figcaption><b>Untitled, 2021</b><small>60 × 50 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small></figcaption></figure>
+  </div>
+</section>
+
+<section aria-labelledby="cat">
+  <h2 id="cat">Catalog</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Cat. no.</th><th>Year</th><th>Medium</th><th>Size (in)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>MS147</td><td>2022</td><td>Oil on linen</td><td>–</td></tr>
+      <tr><td>2</td><td>MS146</td><td>2022</td><td>Oil on linen</td><td>–</td></tr>
+      <tr><td>3</td><td>MS148</td><td>2022</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td>57 × 49</td></tr>
+      <tr><td>4</td><td>–</td><td>2023</td><td>Non-objective; oil, dry pigment, alkyd resin on linen</td><td>59 × 47</td></tr>
+      <tr><td>5</td><td>–</td><td>1992</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td>49 × 42.5</td></tr>
+      <tr><td>6</td><td>MS149</td><td>2022</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td>–</td></tr>
+      <tr><td>7</td><td>–</td><td>2005</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td>44 × 62</td></tr>
+      <tr><td>8</td><td>MS112</td><td>2023</td><td>Oil, alkyd resin, pigment, pre-mulled paint on linen</td><td>63 × 75</td></tr>
+      <tr><td>9</td><td>MS097</td><td>2017</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td>63 × 75</td></tr>
+      <tr><td>10</td><td>–</td><td>2021</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td>60 × 50</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+</div>
+
+<div id="resumeView" hidden>
+  <section aria-labelledby="rtitle">
+    <h2 id="rtitle">Resume</h2>
+    <div class="actions">
+      <button type="button" class="btn" id="dlHtml" hidden>Download .html</button>
+      <button type="button" class="btn" id="dlTxt" hidden>Download .txt</button>
+      <a class="btn" href="https://jhbgallery.com/cms/data/artist_resumes/d_36.pdf">Original PDF at JHB</a>
+      <span class="note" id="dlNote" role="status"></span>
+    </div>
+    <div id="resumeBody"></div>
+  </section>
+</div>
+
+<footer>
+  <p>Details come from the image file names. A dash means the detail was not listed. Prices and availability on request.</p>
+</footer>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Work viewer" hidden>
+  <div class="lb-count" id="lbCount"></div>
+  <button type="button" class="lb-close" id="lbClose" aria-label="Close viewer">&#x2715;</button>
+  <button type="button" class="lb-prev" id="lbPrev" aria-label="Previous work">&#x2190;</button>
+  <div class="lb-stage" id="lbStage"></div>
+  <div class="lb-cap" id="lbCap"></div>
+  <button type="button" class="lb-next" id="lbNext" aria-label="Next work">&#x2192;</button>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'), stage=document.getElementById('lbStage'), cap=document.getElementById('lbCap'),
+      count=document.getElementById('lbCount'), closeBtn=document.getElementById('lbClose'),
+      prevBtn=document.getElementById('lbPrev'), nextBtn=document.getElementById('lbNext');
+  var works=[], idx=0, opener=null;
+
+  var panels=document.querySelectorAll('.panel');
+  panels.forEach(function(p,i){
+    var w=+p.dataset.w, h=+p.dataset.h;
+    var fig=p.closest('figure');
+    var title=fig.querySelector('figcaption b').textContent;
+    var detail=fig.querySelector('figcaption small').textContent;
+    works.push({w:w,h:h,title:title,detail:detail,img:p.dataset.full});
+    p.setAttribute('role','button');
+    p.setAttribute('tabindex','0');
+    p.setAttribute('aria-label','View '+title+(detail?', '+detail:''));
+    p.addEventListener('click',function(){open(i,p);});
+    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i,p);}});
+  });
+
+  function fit(){
+    var wk=works[idx];
+    var cs=getComputedStyle(lb);
+    var availW=lb.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+    var availH=lb.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-cap.offsetHeight-14;
+    var scale=Math.min(availW/wk.w,availH/wk.h,1.5);
+    stage.style.width=Math.floor(wk.w*scale)+'px';
+    stage.style.height=Math.floor(wk.h*scale)+'px';
+  }
+  function render(){
+    var wk=works[idx];
+    stage.textContent='';
+    if(wk.img){var im=document.createElement('img');im.src=wk.img;im.alt=wk.title;stage.appendChild(im);}
+    
+    cap.innerHTML='';
+    var b=document.createElement('b');b.textContent=wk.title;
+    var sm=document.createElement('small');sm.textContent=wk.detail;
+    cap.appendChild(b);cap.appendChild(sm);
+    count.textContent=(idx+1)+' of '+works.length;
+    fit();
+  }
+  function open(i,el){
+    idx=i;opener=el||null;
+    lb.hidden=false;lb.classList.add('open');document.body.classList.add('lb-open');
+    render();closeBtn.focus();
+  }
+  function close(){
+    lb.classList.remove('open');lb.hidden=true;document.body.classList.remove('lb-open');
+    if(opener)opener.focus();
+  }
+  function step(d){idx=(idx+d+works.length)%works.length;render();}
+
+  closeBtn.addEventListener('click',close);
+  prevBtn.addEventListener('click',function(){step(-1);});
+  nextBtn.addEventListener('click',function(){step(1);});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  window.addEventListener('resize',function(){if(lb.classList.contains('open'))fit();});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key==='PageDown')step(1);
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp')step(-1);
+    else return;
+    e.preventDefault();
+  });
+
+  /* Swipe: finger up or left shows the next work, finger down or right shows the previous one. */
+  var sx=0,sy=0,tracking=false;
+  lb.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1)return;
+    sx=e.touches[0].clientX;sy=e.touches[0].clientY;tracking=true;
+  },{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(!tracking)return;tracking=false;
+    var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;
+    var ax=Math.abs(dx),ay=Math.abs(dy);
+    if(Math.max(ax,ay)<50)return;
+    if(ay>=ax)step(dy<0?1:-1);else step(dx<0?1:-1);
+  },{passive:true});
+})();
+</script>
+
+<script>
+/* Resume view. Source: the PDF at jhbgallery.com/cms/data/artist_resumes/d_36.pdf. Check wording against the PDF before publishing. */
+var RESUME=[
+ {t:"Education",rows:[
+  ["1969",["BFA, Pratt Institute, Brooklyn, NY"]],
+  ["1973",["MA, Goddard College, Plainfield, VT"]]]},
+ {t:"Solo Exhibitions",rows:[
+  ["2019",["Mark Saltz – Monoprints and Paintings, Long Island City, NY","Paintings, John Davis Gallery, Hudson, NY"]],
+  ["2017",["Paintings, JHB Gallery/Holly Hunt, New York, NY"]],
+  ["2010",["Mark Saltz – Paintings, Sylvester & Co, Amagansett, NY"]],
+  ["2008",["Mark Saltz – Drawings, Ioneta, Wiscasset, ME","Mark Saltz – Paintings, John Davis Gallery, Hudson, NY"]],
+  ["2005",["Monoprints – July Series by Mark Saltz, VanDeb Editions, New York, NY"]],
+  ["2003",["Paintings, Tobey Fine Arts Gallery, New York, NY"]],
+  ["2001",["Paintings, Chancellor's Gallery, City University of New York, NY","Mark Saltz – Paintings, New Arts Program, Northampton College, Bethlehem, PA","Mark Saltz – Drawings, New Arts Program, NAP Space, Kutztown, PA","Drawing, New Arts Program, NAP Space, Kutztown, PA","Mark Saltz – Drawings, CUNY, La Guardia CC, Long Island City, NY","Mark Saltz, Horadner Romley, New York, NY"]],
+  ["1994",["Paintings From the 80's, La Guardia Community College–CUNY, New York, NY"]],
+  ["1987",["Paintings, Ted Greenwald Gallery, New York, NY"]],
+  ["1984",["Paintings, Barbara Toll Fine Arts, New York, NY"]],
+  ["1981",["Paintings, Barbara Toll Fine Arts, New York, NY"]],
+  ["1979",["Paintings, Columbia University, New York, NY"]]]},
+ {t:"Group Exhibitions",rows:[
+  ["2019",["Painters Prints, VanDeb Editions, Kent State Stark, North Canton, OH"]],
+  ["2016",["A Conversation, curated by Joseph Haske, VanDeb Editions, Long Island City, NY"]],
+  ["2014",["Paintings, Joseph Haske and Mark Saltz, Elizabeth Dow, East Hampton, NY","Cutlog Art Fair, VanDeb Editions, New York, NY","Art Market Hamptons, JHB Gallery, Bridgehampton, NY","Summer Salon, VanDeb Editions, Long Island City, NY","Bold Nature, VanDeb Editions/Second Ave Arts, Long Island City, NY","Cleveland Print Fair, Cleveland Museum, VanDeb Editions, Cleveland, OH","New York Satellite Print Fair, VanDeb Editions, New York, NY","EAB Fair, VanDeb Editions, New York, NY","Miami Project, JHB Gallery, Miami, FL","Extending the Line, Idea Space, Edith and Gaylord Cornerstone Arts Center, Colorado College, Colorado Springs, CO"]],
+  ["2013",["Elective Affinities, VanDeb Editions, New York, NY","Pulse Art Fair, JHB Gallery, New York, NY","Art Market Hamptons, JHB Gallery, Bridgehampton, NY"]],
+  ["2012",["Editions of 1, Monotypes, VanDeb Editions, New York, NY","Texas Contemporary Art Fair, JHB Gallery, Houston, TX"]],
+  ["2011",["Ten Years After 9/11, President's Gallery, LaGuardia CC, CUNY, Long Island City, NY"]],
+  ["2010",["Works on Paper – Big, Small, Casual, Casual Gallery, Brooklyn, NY"]],
+  ["2009",["10th Anniversary, VanDeb Editions, New York, NY"]],
+  ["2007",["Summer Group Exhibition, VanDeb Editions, New York, NY","BAMart Benefit Auction, Brooklyn Academy of Music, Brooklyn, NY"]],
+  ["2006",["Prints from VanDeb Editions, Paul Kuhn Gallery, Calgary, Alberta, Canada","Holiday Salon, Lesley Haller Fine Art, New York, NY"]],
+  ["2004",["Mixed Company: Woman Choose Men, A.I.R. Gallery, New York, NY"]],
+  ["2003",["Of Clear Line and Depth, Printworks by Joseph Haske, Mark Saltz & Lorraine Williams, New Editions, VanDeb Press, New York, NY","Abstraktion: 100 Years Later, Moscow Artists' Union, Moscow, Russia","Abstraktion: 100 Years Later, Part Two, Tobey Fine Arts, New York, NY","Oil, Dirt, Seton Hall University Law School, Newark, NJ"]],
+  ["2002",["Abstraktions, Tobey Fine Arts, New York, NY","Paintings, Mark Saltz, Thornton Willis, Elke Solomon, VanDeb Editions, New York, NY","VanDeb Editions, New York, NY","Faculty Exhibition, Parsons/New School, New York, NY"]],
+  ["2000",["Drawing Slam, Tobey Fine Arts, New York, NY","Painting Invitational, Stephen Haller Gallery, New York, NY","Dirty Drawing, Tobey Fine Arts, New York, NY"]],
+  ["1997",["Current Undercurrent: Working in Brooklyn, Brooklyn Museum of Art","New York Drawers, The Pierogi 2000 Flatfiles, Cornerhouse, Manchester, England","New York Drawers, The Pierogi 2000 Flatfiles, Gasworks, London, England","Art on Paper, Weatherspoon Gallery, University of North Carolina, Greensboro, NC"]],
+  ["1996",["Works on Paper/Part I, Art in Construction Gallery, New York, NY"]],
+  ["1995",["20th Anniversary, City Without Walls, Seton Hall University Law School, Newark, NJ","Off Hand, Joe Haske, Bebe Lee, Mark Saltz, ES Vandam Gallery, New York, NY"]],
+  ["1994",["The Press, Horodner Romley Gallery, New York, NY"]],
+  ["1993",["Cris Cristofaro & Mark Saltz – Recent Work, ES Vandam Gallery, New York, NY","A-Z Small Works, ES Vandam Gallery, New York, NY","Cadavre Exquis, The Drawing Center, New York, NY"]],
+  ["1992",["Playing the Field, Horodner Romley Gallery, New York, NY"]],
+  ["1989",["Benefit Exhibition, New Museum, New York, NY"]],
+  ["1988",["Benefit Exhibition, New Museum, New York, NY"]],
+  ["1986",["Painting in the Third Dimension, City Without Walls, Newark, NJ"]],
+  ["1985",["Drawing Towards Black, Jayne H. Baum Gallery, New York, NY"]],
+  ["1983",["Gallery Group, Barbara Toll Fine Arts, New York, NY"]],
+  ["1982",["Deck the Halls, The Drawing Center, General Electric Company, Fairfield, CT"]],
+  ["1981",["Three Painters, Ron Hunnings Gallery, New York, NY","Invitational Painting Exhibition, OK Harris Gallery, New York, NY","Five Paintings, Barbara Toll Fine Arts, New York, NY"]],
+  ["1979",["Abstract/Realism, Bard College, Annandale-on-Hudson, NY","Mark Saltz – Paintings, Columbia University, New York, NY"]],
+  ["1978",["Collection in Progress, William Paterson College, Paterson, NJ"]],
+  ["1977",["Gallery Group, Neill Gallery, New York, NY"]],
+  ["1976",["International Drawing Exhibition, Rijeka, Yugoslavia","New Acquisitions, Neuberger Museum Purchase, Purchase, NY"]],
+  ["1975",["Contemporary Reflections, Aldrich Museum, Ridgefield, CT"]],
+  ["1971",["Group One Painting and Sculpture, \"Museum,\" a project of Living Artists in America, NY"]]]},
+ {t:"Public Collections",list:["The Arkansas Arts Center, Little Rock, AK","Brooklyn Museum, Brooklyn, NY","Chase Manhattan Bank, New York, NY","City University of New York, New York, NY","Colorado Springs Fine Arts Center, Colorado Springs, CO","The Corcoran Group, New York, NY","Neuberger Museum, Purchase, NY","New York Public Library, New York, NY","Sidney Lewis Foundation, Richmond, VA","Sarah Ann and Wynn Kramarsky Collection, New York, NY","University Museum of Contemporary Art, UMass Fine Arts Center, Amherst, MA","Wells Fargo Bank, St. Louis, MO","Weatherspoon Gallery, University of North Carolina, Greensboro, NC","Zimmerli Art Museum, Rutgers Archives for Printmaking"]},
+ {t:"Grants",rows:[
+  ["2003",["Mid-Atlantic States – Painting Grant"]],
+  ["1996",["New School – Sabbatical Research of Pictorial Space"]],
+  ["1992",["New School/Parsons Faculty Development Grant"]],
+  ["1986–87",["Pollock-Krasner Foundation Grant – Painting"]],
+  ["1983–84",["National Endowment for the Arts Grant – Painting"]]]},
+ {t:"Selected Reviews",list:["Haske, Joseph. A Conversation of Paintings, Two Coats of Paint, October 2016","Haske, Joseph. Printed Editions, Art in America.com, September 2014","Haske, Joseph. Work featured in Interior Design, July 2006","Raynor, Vivian. 20 Years of Art in a City Without Walls, The New York Times, June 11, 1995","Eddy, Don. Mark Saltz, ARTS Magazine, February 1984","Maschek, Joe. The Horrors of Bearing Arms, Artforum, December 1980"]},
+ {t:"Visiting Artist / Guest Critic",rows:[
+  ["2002",["Workshop: Education, Art & Politics: The Uses of the Imagination, with Maxine Greene & Friends, Teachers College, New York, NY"]],
+  ["1998",["Artists Consultation, New Arts Program, Kutztown, PA"]],
+  ["1992",["Artists Talk on Art, New York, NY"]],
+  ["1988",["Philadelphia College of Art, Philadelphia, PA"]],
+  ["1986",["Pratt Institute Graduate Program, Brooklyn, NY"]],
+  ["1985",["University of Delaware Graduate Art Program, DE","Workshop, Fordham University, New York, NY"]]]},
+ {t:"Teaching",rows:[
+  ["1983–1998",["Assistant Professor of Humanities, Drawing/Painting, Yeshiva University, New York, NY"]],
+  ["1985–present",["Associate Professor, Art, Design, History and Theory, Art Media and Technology, Foundation Department, Drawing and Composition, Parsons/New School, New York, NY","Associate Professor of Drawing and Painting, CUNY, Long Island City, NY"]],
+  ["2002–2014",["Bank Street/Parsons Masters Program, Leadership in the Arts Program, Drawing/Painting, New York, NY"]]]}
+];
+
+(function(){
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  function bodyHtml(){
+    var out='';
+    RESUME.forEach(function(sec){
+      out+='<div class="rsec"><h3>'+esc(sec.t)+'</h3>';
+      if(sec.list){
+        out+='<ul class="rplain">'+sec.list.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';
+      }else{
+        sec.rows.forEach(function(r){
+          out+='<div class="rrow"><div class="y">'+esc(r[0])+'</div><ul>'+r[1].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>';
+        });
+      }
+      out+='</div>';
+    });
+    return out;
+  }
+  function toText(){
+    var t='MARK SALTZ\nResume\n\n';
+    RESUME.forEach(function(sec){
+      t+=sec.t.toUpperCase()+'\n';
+      if(sec.list){sec.list.forEach(function(x){t+='- '+x+'\n';});}
+      else{sec.rows.forEach(function(r){r[1].forEach(function(x,i){t+=(i===0?r[0]:'').padEnd(14)+x+'\n';});});}
+      t+='\n';
+    });
+    return t;
+  }
+  function toHtmlDoc(){
+    return '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Mark Saltz Resume</title>'+
+    '<style>body{font:15px/1.5 Georgia,serif;max-width:800px;margin:40px auto;padding:0 20px;color:#1d1f22}h1{font-weight:400}h3{border-bottom:1px solid #ccc;padding-bottom:6px;margin-top:28px}'+
+    '.rrow{display:grid;grid-template-columns:6em 1fr;gap:4px 16px;padding:4px 0}.y{color:#666}ul{list-style:none;margin:0;padding:0}li+li{margin-top:3px}.rplain li{padding:3px 0}</style></head><body><h1>Mark Saltz</h1><p>Resume</p>'+
+    bodyHtml()+'</body></html>';
+  }
+  function save(name,data,type){
+    var note=document.getElementById('dlNote');
+    try{
+      var blob=new Blob([data],{type:type});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=url;a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(url);},2000);
+      note.textContent='Download started: '+name;
+    }catch(e){note.textContent='Download failed. Use the original PDF link.';}
+  }
+
+  document.getElementById('resumeBody').innerHTML=bodyHtml();
+  var h=document.getElementById('dlHtml'), t=document.getElementById('dlTxt');
+  h.hidden=false;t.hidden=false;
+  h.addEventListener('click',function(){save('Mark-Saltz-Resume.html',toHtmlDoc(),'text/html;charset=utf-8');});
+  t.addEventListener('click',function(){save('Mark-Saltz-Resume.txt',toText(),'text/plain;charset=utf-8');});
+
+  var pv=document.getElementById('portfolio'), rv=document.getElementById('resumeView'),
+      nr=document.getElementById('navResume'), np=document.getElementById('navPortfolio');
+  function route(){
+    var r=location.hash==='#resume';
+    pv.hidden=r;rv.hidden=!r;nr.hidden=r;np.hidden=!r;
+    document.title=r?'Mark Saltz Resume':'Mark Saltz Portfolio';
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',route);
+  route();
+})();
+</script>
+</body>
+</html>

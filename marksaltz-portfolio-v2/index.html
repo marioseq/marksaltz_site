@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark Saltz | Oil Paintings on Linen</title>
+<meta name="description" content="Mark Saltz (b. 1948) makes large non-objective oil paintings on linen through scraping, sanding, and studio-mulled pigment at Mana Contemporary in Jersey City, NJ.">
+<meta name="theme-color" content="#121516">
+<!-- DEPLOY STEP: replace og:url and og:image with the live https:// URL before deploying -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mark Saltz | Oil Paintings on Linen">
+<meta property="og:description" content="Large oil paintings built from color and light, made through scraping, sanding, and repeated passes of pigment.">
+<meta property="og:url" content="https://marksaltz.com/">
+<meta property="og:image" content="assets/img/03.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23121516'/%3E%3Crect x='10' y='12' width='26' height='36' fill='%237eb5b4' opacity='.85'/%3E%3Crect x='28' y='16' width='26' height='36' fill='%23eae6de' opacity='.9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" imagesrcset="assets/img/03-480.webp 480w, assets/img/03-760.webp 760w, assets/img/03.webp 894w" imagesizes="100vw" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
+<style>
+:root{
+  --canvas:#121516;
+  --panel:#1a1e20;
+  --panel-elevated:#22272a;
+  --accent:#7eb5b4;
+  --accent-hover:#9bc9c8;
+  --accent-muted:rgba(126,181,180,.18);
+  --border-ui:#636c6e;
+  --hairline:rgba(234,230,222,.13);
+  --text-secondary:#a5a7a1;
+  --text-primary:#eae6de;
+  --tshadow:0 1px 2px rgba(8,10,11,.96),0 3px 14px rgba(8,10,11,.84),0 10px 44px rgba(8,10,11,.88);
+  --display:"Helvetica Neue","HelveticaNeue-Light","Helvetica Neue Light","Source Sans 3",Helvetica,Arial,sans-serif;
+  --body:"Helvetica Neue","HelveticaNeue-Light","Helvetica Neue Light","Source Sans 3",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --inch-px:4px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--canvas);color:var(--text-primary);scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background:var(--canvas);
+  color:var(--text-primary);
+  font-family:var(--body);
+  font-size:16px;
+  font-weight:300;
+  line-height:1.5;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-underline-offset:3px;transition:color .2s ease}
+a:hover{color:var(--accent-hover)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+.skip-link{
+  position:fixed;left:-9999px;top:12px;z-index:100;
+  background:var(--accent);color:#0d1011;padding:10px 16px;border-radius:6px;
+  font-weight:500;text-decoration:none;
+}
+.skip-link:focus{left:12px}
+
+.ambient-env{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+}
+.ambient-glow{
+  position:absolute;inset:-25%;
+  background:
+    radial-gradient(ellipse 46% 38% at 22% 24%,rgba(126,181,180,.07),transparent 70%),
+    radial-gradient(ellipse 42% 44% at 78% 68%,rgba(196,158,86,.05),transparent 72%);
+  animation:envDrift 90s ease-in-out infinite alternate;
+  will-change:transform;
+}
+.ambient-weave{
+  position:absolute;inset:0;opacity:.03;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(234,230,222,.5) 0 1px,transparent 1px 6px),
+    repeating-linear-gradient(90deg,rgba(234,230,222,.35) 0 1px,transparent 1px 6px);
+}
+@keyframes envDrift{
+  0%{transform:translate3d(-2%,-1.5%,0) scale(1)}
+  100%{transform:translate3d(2%,1.5%,0) scale(1.04)}
+}
+@media(prefers-reduced-motion:reduce){
+  .ambient-glow{animation:none}
+}
+
+.topbar{
+  position:fixed;top:0;inset-inline:0;z-index:40;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px clamp(16px,4vw,48px);
+  background:linear-gradient(180deg,rgba(14,17,18,.78) 0%,rgba(14,17,18,0) 100%);
+  border-bottom:1px solid transparent;
+  transition:background .35s ease,border-color .35s ease,backdrop-filter .35s ease;
+}
+.topbar.scrolled{
+  background:rgba(18,21,22,.88);
+  border-bottom-color:var(--hairline);
+  backdrop-filter:blur(12px);
+}
+.brand-link{
+  display:inline-flex;align-items:center;gap:10px;
+  color:var(--text-primary);text-decoration:none;
+  font-family:var(--display);font-size:20px;font-weight:300;letter-spacing:.08em;
+  white-space:nowrap;
+}
+.brand-link:hover{color:var(--text-primary)}
+.brand-mark{width:22px;height:22px;flex:none}
+.nav-links{
+  display:flex;align-items:center;flex-wrap:wrap;gap:8px clamp(12px,2vw,24px);
+}
+.nav-links a{
+  color:var(--text-primary);text-decoration:none;font-size:14px;font-weight:300;letter-spacing:.08em;
+  opacity:.86;transition:opacity .2s ease,color .2s ease;white-space:nowrap;
+}
+.nav-links a:hover{opacity:1;color:var(--accent-hover)}
+.nav-links a.nav-cta{
+  opacity:1;color:#0d1011;background:var(--accent);
+  padding:7px 15px;border-radius:999px;font-weight:500;font-size:13px;
+  transition:background .2s ease,transform .2s ease;
+}
+.nav-links a.nav-cta:hover{background:var(--accent-hover);color:#0d1011}
+@media(max-width:640px){
+  .topbar{padding:12px 16px}
+  .nav-links a.hide-sm{display:none}
+}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--body);font-size:14px;font-weight:500;
+  padding:11px 22px;border-radius:999px;cursor:pointer;text-decoration:none;
+  border:1px solid var(--border-ui);color:var(--text-primary);background:rgba(26,30,32,.75);
+  transition:border-color .22s ease,background .22s ease,color .22s ease,transform .22s ease;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent-hover)}
+.btn-primary{
+  background:var(--accent);border-color:var(--accent);color:#0d1011;
+}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:#0d1011}
+.btn-ghost{background:transparent}
+@media(pointer:coarse){
+  .btn,.chip-btn,.nav-links a.nav-cta,.lb button,.filter-btn{
+    min-height:44px;display:inline-flex;align-items:center;justify-content:center;
+  }
+}
+
+.hero{position:relative;z-index:1;height:1100vh}
+.hero-stage{
+  position:sticky;top:0;height:100vh;height:100svh;width:100%;overflow:hidden;
+  background:#0f1213;
+}
+.hero-paintings{position:absolute;inset:0;pointer-events:none}
+.hero-layer{
+  position:absolute;inset:0;margin:0;opacity:0;
+  will-change:transform,opacity;transform-origin:center center;
+}
+.hero-layer img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-layer[data-layer="0"]{opacity:1}
+
+.scrim{
+  position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:
+    radial-gradient(ellipse 118% 92% at 54% 44%,rgba(12,15,16,.12) 25%,rgba(12,15,16,.74) 100%),
+    linear-gradient(180deg,rgba(12,15,16,.48) 0%,rgba(12,15,16,.08) 28%,rgba(12,15,16,.24) 64%,rgba(12,15,16,.84) 100%);
+}
+.hero-bands{position:absolute;inset:0;z-index:3;pointer-events:none}
+.band{
+  position:absolute;inset:0;display:flex;align-items:flex-end;
+  padding:88px clamp(20px,6vw,88px) clamp(44px,8vh,84px);
+  opacity:0;pointer-events:none;text-shadow:var(--tshadow);
+}
+.band.is-active{pointer-events:auto}
+.band::before{
+  content:"";position:absolute;inset:-4%;pointer-events:none;z-index:-1;
+  opacity:calc(.28 + .72 * var(--k,1));
+  background:radial-gradient(ellipse 76% 64% at 24% 80%,rgba(8,10,11,.76) 0%,rgba(8,10,11,.54) 48%,rgba(8,10,11,0) 78%);
+}
+.band-inner{position:relative;max-width:740px;display:flex;flex-direction:column;align-items:flex-start}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;width:max-content;
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-primary);padding:6px 13px;margin:0 0 14px;
+  background:rgba(14,17,18,.68);border:1px solid rgba(126,181,180,.36);
+  border-radius:999px;backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(8,10,11,.9);
+}
+.band h1,.band h2.band-title,.static-hero-block h1{
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(36px,5.6vw,72px);line-height:1.08;letter-spacing:.1em;
+  text-transform:uppercase;margin:0 0 12px;max-width:18ch;
+}
+.band .band-dims,.static-hero-block .band-dims{
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(13px,1.2vw,16px);line-height:1.3;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-primary);opacity:.92;margin:0;
+}
+.band .band-sub{
+  font-size:clamp(16px,1.6vw,19px);line-height:1.5;
+  color:var(--text-primary);opacity:.92;max-width:44ch;margin:0;
+}
+.band-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.band .btn,.static-hero-block .btn{text-shadow:none}
+
+.split-text{position:relative;display:inline-block}
+.band .w,.band .c{display:inline-block;will-change:transform,opacity}
+.band .sp{display:inline-block;width:.26em}
+
+.anim-rise .w{
+  --kc:clamp(0,(var(--k,0) - var(--th,0)) * 2.7,1);
+  opacity:var(--kc);
+  transform:translate3d(0,calc((1 - var(--kc)) * 22px),0);
+}
+.anim-rise .band-sub,.anim-rise .band-dims{
+  --ks:clamp(0,(var(--k,0) - .46) * 2.5,1);
+  opacity:calc(.92 * var(--ks));
+  transform:translate3d(0,calc((1 - var(--ks)) * 12px),0);
+}
+.anim-rise .band-actions{
+  --kb:clamp(0,(var(--k,0) - .62) * 3.0,1);
+  opacity:var(--kb);
+  transform:translate3d(0,calc((1 - var(--kb)) * 12px),0);
+}
+.anim-snap .c{
+  --kc:clamp(0,(var(--k,0) - var(--th,0)) * 2.8,1);
+  opacity:var(--kc);
+  transform:translate3d(calc((1 - var(--kc)) * var(--jx,18px)),0,0);
+}
+.anim-snap .band-sub,.anim-snap .band-dims{
+  --ks:clamp(0,(var(--k,0) - .50) * 2.5,1);
+  opacity:calc(.92 * var(--ks));
+  transform:translate3d(calc((1 - var(--ks)) * 14px),0,0);
+}
+.blur-wrap{position:relative;display:block}
+.blur-soft{
+  position:absolute;inset:0;filter:blur(9px);pointer-events:none;
+  opacity:calc((1 - clamp(0,var(--k,0) * 1.35,1)) * .75);
+}
+.blur-sharp{
+  position:relative;
+  opacity:clamp(0,(var(--k,0) - .06) * 1.4,1);
+  transform:scale(calc(.97 + .03 * clamp(0,var(--k,0) * 1.25,1)));
+}
+.anim-blur .band-sub,.anim-blur .band-dims{
+  --ks:clamp(0,(var(--k,0) - .42) * 2.4,1);
+  opacity:calc(.92 * var(--ks));
+}
+.scroll-cue{
+  position:absolute;right:clamp(20px,5vw,64px);bottom:clamp(28px,6vh,48px);z-index:4;
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-primary);padding:8px 14px;border-radius:999px;
+  background:rgba(14,17,18,.68);border:1px solid rgba(234,230,222,.22);
+  backdrop-filter:blur(8px);transition:opacity .35s ease;
+}
+.scroll-cue svg{width:14px;height:14px;animation:cueBob 2.2s ease-in-out infinite}
+@keyframes cueBob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+.hero-spine{
+  position:absolute;right:clamp(16px,2.5vw,32px);top:50%;transform:translateY(-50%);
+  z-index:5;display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+}
+.spine-track{
+  display:flex;flex-direction:column;gap:4px;padding:6px 4px;border-radius:999px;
+  background:rgba(14,17,18,.58);border:1px solid rgba(234,230,222,.16);backdrop-filter:blur(8px);
+}
+.spine-dot{
+  position:relative;width:24px;height:24px;padding:0;border:0;border-radius:50%;
+  background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.spine-dot::after{
+  content:"";width:9px;height:9px;border-radius:50%;border:1px solid var(--border-ui);
+  background:transparent;transition:background .25s ease,transform .25s ease,border-color .25s ease;
+}
+.spine-dot.active::after{background:var(--accent);border-color:var(--accent);transform:scale(1.25)}
+.spine-readout{
+  font-family:var(--mono);font-size:11px;color:var(--text-secondary);
+  background:rgba(14,17,18,.68);padding:4px 9px;border-radius:6px;
+  border:1px solid rgba(234,230,222,.14);white-space:nowrap;
+}
+@media(max-width:960px){.hero-spine{display:none}}
+
+.static-hero-block{display:none}
+.hero.is-static{height:auto;min-height:86svh}
+.hero.is-static .hero-stage{position:relative;height:auto;min-height:86svh;display:flex;align-items:flex-end}
+.hero.is-static .hero-layer{display:none}
+.hero.is-static .hero-layer[data-layer="0"]{display:block;opacity:1;transform:none}
+.hero.is-static .hero-bands,.hero.is-static .hero-spine,.hero.is-static .scroll-cue{display:none}
+.hero.is-static .static-hero-block{
+  display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:4;width:100%;
+  padding:120px clamp(20px,6vw,72px) 56px;text-shadow:var(--tshadow);
+}
+.hero.is-static .static-hero-block::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 85% 75% at 28% 72%,rgba(8,10,11,.82) 0%,rgba(8,10,11,.56) 54%,rgba(8,10,11,0) 85%);
+}
+.hero.is-static .static-hero-block h1{
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(36px,8vw,64px);line-height:1.08;letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px;max-width:18ch;
+}
+.static-hero-block .chip{max-width:100%}
+@media(max-width:480px){.chip{font-size:10.5px;letter-spacing:.05em;border-radius:10px}}
+.hero.is-static .static-hero-block p.band-sub{
+  font-size:17px;line-height:1.5;max-width:44ch;margin:0;color:var(--text-primary);
+}
+@media(prefers-reduced-motion:reduce),(max-width:768px),(pointer:coarse){
+  .hero{height:auto;min-height:86svh}
+  .hero-stage{position:relative;height:auto;min-height:86svh;display:flex;align-items:flex-end}
+  .hero-layer{display:none}
+  .hero-layer[data-layer="0"]{display:block;opacity:1;transform:none}
+  .hero-bands,.hero-spine,.scroll-cue{display:none}
+  .static-hero-block{display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:4;width:100%;padding:120px clamp(20px,6vw,72px) 56px;text-shadow:var(--tshadow)}
+  .static-hero-block::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 85% 75% at 28% 72%,rgba(8,10,11,.82) 0%,rgba(8,10,11,.56) 54%,rgba(8,10,11,0) 85%)}
+  .static-hero-block h1{font-family:var(--display);font-weight:300;font-size:clamp(36px,8vw,64px);line-height:1.08;letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px;max-width:18ch}
+  .static-hero-block p.band-sub{font-size:17px;line-height:1.5;max-width:44ch;margin:0;color:var(--text-primary)}
+}
+
+main{position:relative;z-index:2;background:var(--canvas)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+.sec{padding:clamp(64px,8vw,108px) 0;scroll-margin-top:72px}
+.sec-panel{background:var(--panel);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+.sec-kicker{
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 12px;
+}
+.sec-title{
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(32px,4.5vw,52px);line-height:1.12;letter-spacing:.1em;
+  margin:0 0 16px;max-width:22ch;
+}
+.sec-lede{color:var(--text-secondary);max-width:58ch;margin:0;font-size:16px}
+
+.svg-divider{display:block;width:100%;height:24px;overflow:visible;margin:0}
+.svg-divider path,.svg-divider polygon{
+  fill:none;stroke:var(--accent);stroke-width:1;opacity:.45;
+  stroke-dasharray:1240;stroke-dashoffset:1240;
+  transition:stroke-dashoffset 1.3s cubic-bezier(.22,1,.36,1);
+}
+.svg-divider.drawn path,.svg-divider.drawn polygon{stroke-dashoffset:0}
+@media(prefers-reduced-motion:reduce){
+  .svg-divider path,.svg-divider polygon{stroke-dashoffset:0;transition:none}
+}
+
+[data-reveal]{
+  opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);
+}
+[data-reveal].in{opacity:1;transform:translate3d(0,0,0)}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+}
+
+.stmt-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:860px){
+  .stmt-grid{grid-template-columns:320px 1fr;gap:clamp(40px,6vw,88px)}
+  .stmt-rail{position:sticky;top:96px}
+}
+.facts{list-style:none;margin:24px 0 0;padding:0}
+.facts li{padding:13px 0;border-top:1px solid var(--hairline);display:flex;flex-direction:column;gap:3px}
+.facts li:last-child{border-bottom:1px solid var(--hairline)}
+.facts b{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);
+}
+.facts span{font-size:15px;color:var(--text-primary)}
+.stmt-prose p{
+  font-family:var(--body);font-weight:300;
+  font-size:clamp(17px,1.5vw,20px);line-height:1.45;letter-spacing:.01em;
+  color:var(--text-primary);max-width:44ch;margin:0 0 24px;
+}
+.stmt-prose p:last-child{margin-bottom:0}
+
+.works-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.works-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.seg-group{
+  display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;
+  background:var(--panel);border:1px solid var(--border-ui);border-radius:999px;
+}
+.filter-btn{
+  font-family:var(--body);font-size:13px;font-weight:500;
+  background:transparent;color:var(--text-secondary);border:0;
+  padding:7px 14px;border-radius:999px;cursor:pointer;
+  transition:background .2s ease,color .2s ease;
+}
+.filter-btn:hover{color:var(--text-primary)}
+.filter-btn[aria-pressed="true"]{background:var(--accent);color:#0d1011}
+
+.scale-stage{display:flex;flex-direction:column;gap:32px}
+.scale-note{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;
+  font-family:var(--mono);font-size:12px;color:var(--text-secondary);
+  padding:12px 16px;background:var(--panel);border:1px solid var(--hairline);border-radius:8px;
+}
+.scale-note strong{color:var(--accent);font-weight:500}
+.wall-layout{display:flex;align-items:flex-start;gap:28px}
+.human-gauge{
+  position:sticky;top:108px;flex:none;width:54px;display:flex;flex-direction:column;align-items:center;
+  color:var(--text-secondary);font-family:var(--mono);font-size:11px;padding-bottom:12px;
+}
+.human-gauge svg{width:46px;height:calc(72 * var(--inch-px));display:block;overflow:visible}
+.human-gauge .gauge-line{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:300;stroke-dashoffset:300;transition:stroke-dashoffset 1.2s ease}
+.human-gauge.drawn .gauge-line{stroke-dashoffset:0}
+@media(prefers-reduced-motion:reduce){.human-gauge .gauge-line{stroke-dashoffset:0;transition:none}}
+@media(max-width:960px){:root{--inch-px:3px}}
+@media(max-width:680px){.human-gauge,.scale-note,.works-controls .seg-group:first-child{display:none}}
+
+.wall-items{flex:1;display:flex;flex-wrap:wrap;align-items:flex-end;gap:36px 26px}
+.work-card{margin:0;display:flex;flex-direction:column;transition:opacity .3s ease,transform .3s ease}
+.work-card[hidden]{display:none}
+.work-frame{
+  position:relative;display:block;padding:0;border:1px solid var(--border-ui);
+  background:#0d0f10;overflow:hidden;cursor:zoom-in;width:100%;
+  transition:border-color .25s ease,transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
+}
+.work-frame:hover{border-color:var(--accent);transform:translate3d(0,-4px,0);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.work-frame img{width:100%;height:100%;object-fit:contain;display:block}
+.work-badge{
+  position:absolute;right:10px;bottom:10px;font-family:var(--mono);font-size:11px;color:var(--text-primary);
+  background:rgba(14,17,18,.78);border:1px solid rgba(234,230,222,.22);
+  padding:3px 8px;border-radius:4px;opacity:0;transition:opacity .25s ease;pointer-events:none;
+}
+.work-frame:hover .work-badge,.work-frame:focus-visible .work-badge{opacity:1}
+
+.wall-items.mode-scale .work-card{width:calc(var(--w-in,48) * var(--inch-px));max-width:100%}
+.wall-items.mode-scale .work-cap{min-height:78px}
+.wall-items.mode-scale .work-frame{aspect-ratio:var(--ar)}
+@media(max-width:680px){
+  .wall-items.mode-scale{display:grid;grid-template-columns:1fr;gap:28px}
+  .wall-items.mode-scale .work-card{width:100%}
+}
+.wall-items.mode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));align-items:start;gap:34px 24px}
+.wall-items.mode-grid .work-card{width:100%}
+.wall-items.mode-grid .work-frame{aspect-ratio:var(--ar)}
+
+.work-cap{margin-top:11px;display:flex;flex-direction:column;gap:3px}
+.work-cap-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.work-cap b{font-family:var(--display);font-weight:300;font-style:italic;font-size:16px;letter-spacing:.02em;color:var(--text-primary)}
+.work-cap .cat-no{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--accent);white-space:nowrap}
+.work-cap small{font-size:13px;line-height:1.35;font-weight:300;color:var(--text-secondary)}
+
+.tablewrap{overflow-x:auto;margin-top:28px;border-top:1px solid var(--border-ui)}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:13px 16px 13px 0;border-bottom:1px solid var(--hairline);vertical-align:baseline}
+th{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);white-space:nowrap}
+td.mono{font-family:var(--mono);font-size:13px;white-space:nowrap}
+tbody tr{cursor:pointer;transition:background .18s ease}
+tbody tr:hover{background:var(--panel-elevated)}
+.row-open-btn{
+  font-family:var(--mono);font-size:13px;color:var(--accent);
+  background:none;border:0;padding:4px 8px 4px 0;cursor:pointer;text-align:left;
+}
+.row-open-btn:hover{color:var(--accent-hover);text-decoration:underline}
+
+.resume-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:24px}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.note{font-size:13px;color:var(--text-secondary);font-family:var(--mono)}
+.resume-tabs{margin-bottom:28px}
+.rsec{margin:0 0 36px}
+.rsec[hidden]{display:none}
+.rsec h3{font-family:var(--display);font-weight:300;font-size:22px;letter-spacing:.1em;margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--border-ui);color:var(--text-primary)}
+.rrow{display:grid;grid-template-columns:1fr;gap:4px;padding:8px 0;border-bottom:1px solid rgba(234,230,222,.06);font-size:15px;align-items:baseline}
+@media(min-width:640px){.rrow{grid-template-columns:7.5em 1fr;gap:6px 24px}}
+.rrow .y{font-family:var(--mono);font-size:13px;color:var(--accent);font-variant-numeric:tabular-nums}
+.rrow ul{list-style:none;margin:0;padding:0}
+.rrow li+li{margin-top:4px}
+.rplain{list-style:none;margin:0;padding:0;font-size:15px}
+.rplain li{padding:6px 0;border-bottom:1px solid rgba(234,230,222,.06)}
+
+.contact-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:860px){.contact-grid{grid-template-columns:1fr 1.05fr;gap:clamp(36px,5vw,72px)}}
+.contact-plate{margin:0 0 24px;border:1px solid var(--border-ui);background:#0d0f10;overflow:hidden}
+.contact-plate img{width:100%;height:auto;display:block}
+.contact-plate figcaption{padding:10px 14px;font-family:var(--mono);font-size:12px;color:var(--text-secondary);border-top:1px solid var(--hairline);background:var(--panel)}
+.studio-details{list-style:none;margin:20px 0 0;padding:0}
+.studio-details li{padding:12px 0;border-top:1px solid var(--hairline);display:flex;flex-direction:column;gap:4px}
+.studio-details li:last-child{border-bottom:1px solid var(--hairline)}
+.studio-details b{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)}
+.email-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.copy-btn{
+  font-family:var(--mono);font-size:12px;padding:5px 11px;border-radius:999px;
+  border:1px solid var(--border-ui);background:var(--panel-elevated);color:var(--text-primary);
+  cursor:pointer;transition:border-color .2s ease,color .2s ease;
+}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent-hover)}
+
+.inquiry-card{background:var(--panel);border:1px solid var(--border-ui);border-radius:10px;padding:clamp(22px,3.5vw,36px)}
+.inquiry-card h3{font-family:var(--display);font-weight:300;font-size:28px;letter-spacing:.1em;margin:0 0 8px}
+.inquiry-card .form-note{font-size:14px;color:var(--text-secondary);margin:0 0 22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px}
+.field input,.field select,.field textarea{
+  width:100%;font-family:var(--body);font-size:15px;color:var(--text-primary);
+  background:var(--canvas);border:1px solid var(--border-ui);border-radius:6px;
+  padding:11px 13px;transition:border-color .2s ease;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none}
+.field textarea{min-height:108px;resize:vertical}
+.form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px}
+.form-status{margin-top:16px;padding:12px 14px;border-radius:6px;background:rgba(126,181,180,.12);border:1px solid var(--accent);font-size:14px;color:var(--text-primary)}
+.form-status[hidden]{display:none}
+
+footer{position:relative;z-index:2;padding:36px 0 56px;border-top:1px solid var(--hairline);color:var(--text-secondary);font-size:14px}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 28px;align-items:baseline}
+.foot-row p{margin:0}
+
+body.lb-open{overflow:hidden}
+.lb{
+  position:fixed;inset:0;z-index:60;display:none;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;
+  background:rgba(10,12,13,.96);touch-action:none;padding:64px 72px 28px;
+}
+.lb.open{display:flex}
+.lb-top{position:absolute;top:14px;inset-inline:18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lb-count{font-family:var(--mono);font-size:13px;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.lb-tools{display:flex;align-items:center;gap:10px}
+.lb-stage{position:relative;border:1px solid var(--border-ui);background:#0c0e0f;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .25s ease-out;transform-origin:50% 50%}
+.lb-stage.loupe-on{cursor:zoom-out}
+.lb-stage.loupe-on img{transition:none}
+.lb-cap{text-align:center;font-size:15px;line-height:1.45;max-width:64ch;display:flex;flex-direction:column;align-items:center;gap:4px}
+.lb-cap b{font-family:var(--display);font-weight:300;font-style:italic;font-size:18px;letter-spacing:.04em}
+.lb-cap small{color:var(--text-secondary);font-size:13px}
+.lb-inquire{margin-top:6px;font-family:var(--mono);font-size:12px;color:var(--accent);text-decoration:none}
+.lb-inquire:hover{text-decoration:underline}
+.lb button.lb-icon{
+  font:inherit;color:var(--text-primary);background:var(--panel);border:1px solid var(--border-ui);border-radius:999px;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:19px;line-height:1;
+}
+.lb button.lb-icon:hover{border-color:var(--accent);color:var(--accent-hover)}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:14px}
+.lb-next{right:14px}
+.lb-loupe{
+  font-family:var(--mono);font-size:12px;padding:8px 14px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--border-ui);color:var(--text-primary);cursor:pointer;
+}
+.lb-loupe[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#0d1011}
+@media(max-width:640px){
+  .lb{padding:64px 12px 86px}
+  .lb-prev,.lb-next{top:auto;bottom:16px;transform:none}
+  .lb-prev{left:calc(50% - 54px)}
+  .lb-next{right:calc(50% - 54px)}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="ambient-env" aria-hidden="true">
+  <div class="ambient-glow"></div>
+  <div class="ambient-weave"></div>
+</div>
+
+<header class="topbar" id="topbar">
+  <a class="brand-link" href="#top">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="2" y="3" width="11" height="15" fill="none" stroke="#7eb5b4" stroke-width="1.5"/>
+      <rect x="10" y="6" width="12" height="15" fill="none" stroke="#eae6de" stroke-width="1.5"/>
+    </svg>
+    <span>Mark Saltz</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#statement" class="hide-sm">Statement</a>
+    <a href="#works">Works</a>
+    <a href="#catalog" class="hide-sm">Catalog</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact" class="nav-cta">Studio Visit</a>
+  </nav>
+</header>
+
+<section class="hero" id="top" aria-label="Featured works">
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-paintings" aria-hidden="true">
+      <figure class="hero-layer" data-layer="0">
+        <picture>
+          <source type="image/webp" srcset="assets/img/03-480.webp 480w, assets/img/03-760.webp 760w, assets/img/03.webp 894w" sizes="100vw">
+          <img src="assets/img/03-760.jpg" srcset="assets/img/03-480.jpg 480w, assets/img/03-760.jpg 760w, assets/img/03.jpg 894w" sizes="100vw" width="894" height="1050" alt="" fetchpriority="high" decoding="sync">
+        </picture>
+      </figure>
+      <figure class="hero-layer" data-layer="1">
+        <picture>
+          <source type="image/webp" data-srcset="assets/img/09.webp">
+          <img data-src="assets/img/09.jpg" width="687" height="769" alt="" decoding="async">
+        </picture>
+      </figure>
+      <figure class="hero-layer" data-layer="2">
+        <picture>
+          <source type="image/webp" data-srcset="assets/img/07.webp">
+          <img data-src="assets/img/07.jpg" width="1050" height="712" alt="" decoding="async">
+        </picture>
+      </figure>
+      <figure class="hero-layer" data-layer="3">
+        <picture>
+          <source type="image/webp" data-srcset="assets/img/02.webp">
+          <img data-src="assets/img/02.jpg" width="1050" height="915" alt="" decoding="async">
+        </picture>
+      </figure>
+    </div>
+
+    <div class="scrim" aria-hidden="true"></div>
+
+    <div class="hero-bands" id="heroBands">
+      <div class="band anim-rise is-active" data-band="0" data-a="0.00" data-b="0.23">
+        <div class="band-inner">
+          <p class="chip">Mark Saltz</p>
+          <h1 class="split-text" data-split="words">MS148, 2022</h1>
+          <p class="band-dims">57 × 49 in</p>
+        </div>
+      </div>
+
+      <div class="band anim-snap" data-band="1" data-a="0.24" data-b="0.47">
+        <div class="band-inner">
+          <p class="chip">Mark Saltz</p>
+          <h2 class="band-title split-text" data-split="chars">MS097, 2017</h2>
+          <p class="band-dims">63 × 75 in</p>
+        </div>
+      </div>
+
+      <div class="band anim-blur" data-band="2" data-a="0.49" data-b="0.72">
+        <div class="band-inner">
+          <p class="chip">Mark Saltz</p>
+          <h2 class="band-title blur-wrap">
+            <span class="blur-soft" aria-hidden="true">Untitled, 2005</span>
+            <span class="blur-sharp">Untitled, 2005</span>
+          </h2>
+          <p class="band-dims">44 × 62 in</p>
+        </div>
+      </div>
+
+      <div class="band anim-rise" data-band="3" data-a="0.74" data-b="1.00">
+        <div class="band-inner">
+          <p class="chip">Mark Saltz</p>
+          <h2 class="band-title split-text" data-split="words">MS146, 2022</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="static-hero-block" id="staticHero">
+      <p class="chip">Mark Saltz</p>
+      <h1>MS148, 2022</h1>
+      <p class="band-dims">57 × 49 in</p>
+    </div>
+
+    <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+      <span>Scroll to enter</span>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M8 3v10M4 9l4 4 4-4"/>
+      </svg>
+    </div>
+
+    <aside class="hero-spine" aria-label="Hero chapters">
+      <div class="spine-track">
+        <button type="button" class="spine-dot active" data-jump="0.06" aria-label="Slide 1: MS148, 2022"></button>
+        <button type="button" class="spine-dot" data-jump="0.35" aria-label="Slide 2: MS097, 2017"></button>
+        <button type="button" class="spine-dot" data-jump="0.60" aria-label="Slide 3: Untitled, 2005"></button>
+        <button type="button" class="spine-dot" data-jump="0.90" aria-label="Slide 4: MS146, 2022"></button>
+      </div>
+      <div class="spine-readout" id="spineReadout" aria-hidden="true">01 / 04 · MS148</div>
+    </aside>
+  </div>
+</section>
+
+<main id="main" tabindex="-1">
+  <svg class="svg-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 12 H584 M616 12 H1200"/>
+    <polygon points="600,4 608,12 600,20 592,12"/>
+  </svg>
+
+  <section class="sec" id="statement" aria-labelledby="stmtHeading">
+    <div class="wrap">
+      <div class="stmt-grid">
+        <div class="stmt-rail" data-reveal>
+          <p class="sec-kicker">01 / Statement</p>
+          <h2 class="sec-title" id="stmtHeading">Psychological states of being.</h2>
+          <ul class="facts">
+            <li><b>Subject</b><span>Psychological states of being</span></li>
+            <li><b>Tied to</b><span>Time of day, weather, season</span></li>
+            <li><b>Medium</b><span>Oil, resin, pigment on linen</span></li>
+            <li><b>Scale</b><span>Life-size, large enough to enter</span></li>
+            <li><b>Studio</b><span>Mana Contemporary, 888 Newark Ave, Studio 500, Jersey City, NJ</span></li>
+          </ul>
+        </div>
+        <div class="stmt-prose" data-reveal>
+          <p>The paintings refer to psychological states of being, and those states follow time of day, weather and season.</p>
+          <p>Saltz builds color and light by repetition. He scrapes, power sands and moves pigment across the surface. The paint is mulled in his own studio and suspended in linseed oil or alkyd resin.</p>
+          <p>The works are made at the scale of a person, big enough to step into. Finished paintings rarely come out in sequence. They can hang alone, or in groups that change how a room feels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="svg-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 12 H584 M616 12 H1200"/>
+    <polygon points="600,4 608,12 600,20 592,12"/>
+  </svg>
+  <section class="sec" id="works" aria-labelledby="worksHeading">
+    <div class="wrap">
+      <div class="works-head" data-reveal>
+        <div>
+          <p class="sec-kicker">02 / Selected Works</p>
+          <h2 class="sec-title" id="worksHeading">Selected works</h2>
+          <p class="sec-lede">Select any painting to inspect the scraped surface at 2.2x magnification. Proportional wall view draws listed works to one physical scale beside a 6-foot (72 in) human height line.</p>
+        </div>
+        <div class="works-controls">
+          <div class="seg-group" role="group" aria-label="Wall layout mode">
+            <button type="button" class="filter-btn" id="modeScaleBtn" aria-pressed="true">Scale Wall</button>
+            <button type="button" class="filter-btn" id="modeGridBtn" aria-pressed="false">Uniform Grid</button>
+          </div>
+          <div class="seg-group" role="group" aria-label="Filter works by decade">
+            <button type="button" class="filter-btn" data-era="all" aria-pressed="true">All (10)</button>
+            <button type="button" class="filter-btn" data-era="2020s" aria-pressed="false">2020s</button>
+            <button type="button" class="filter-btn" data-era="2000s" aria-pressed="false">2000s–2010s</button>
+            <button type="button" class="filter-btn" data-era="1990s" aria-pressed="false">1990s</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="scale-stage">
+        <div class="scale-note" id="scaleNote">
+          <strong>Physical Scale Mode:</strong>
+          <span>Listed works are drawn to a common inch ratio next to a 72 in (6 ft) reference rule. Works without listed measurements display at a standard 48 in width.</span>
+        </div>
+
+        <div class="wall-layout">
+          <div class="human-gauge" id="humanGauge" aria-hidden="true">
+            <span>72 in</span>
+            <span>6 ft</span>
+            <svg viewBox="0 0 46 288" preserveAspectRatio="none">
+              <line class="gauge-line" x1="23" y1="0" x2="23" y2="288"/>
+              <line x1="12" y1="0" x2="34" y2="0" stroke="#7eb5b4" stroke-width="1.5"/>
+              <line x1="16" y1="144" x2="30" y2="144" stroke="#636c6e" stroke-width="1"/>
+              <line x1="12" y1="288" x2="34" y2="288" stroke="#7eb5b4" stroke-width="1.5"/>
+            </svg>
+            <span>0 in</span>
+          </div>
+
+          <div class="wall-items mode-scale" id="wallItems">
+            <figure class="work-card" data-era="2020s" data-idx="0" style="--ar:845/1050;--w-in:48">
+              <button type="button" class="work-frame" data-full="assets/img/01.webp" data-full-fb="assets/img/01.jpg" data-w="845" data-h="1050" aria-label="View Untitled, 2022, MS147">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/01-480.webp 480w, assets/img/01-760.webp 760w, assets/img/01.webp 845w" sizes="(max-width:680px) 92vw, 320px">
+                  <img src="assets/img/01-480.jpg" srcset="assets/img/01-480.jpg 480w, assets/img/01-760.jpg 760w, assets/img/01.jpg 845w" sizes="(max-width:680px) 92vw, 320px" width="845" height="1050" alt="Untitled, 2022, MS147" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2022</b><span class="cat-no">MS147</span></div>
+                <small>Oil on linen · Size unlisted</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2020s" data-idx="1" style="--ar:1050/915;--w-in:54">
+              <button type="button" class="work-frame" data-full="assets/img/02.webp" data-full-fb="assets/img/02.jpg" data-w="1050" data-h="915" aria-label="View Untitled, 2022, MS146">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/02-480.webp 480w, assets/img/02-760.webp 760w, assets/img/02.webp 1050w" sizes="(max-width:680px) 92vw, 340px">
+                  <img src="assets/img/02-480.jpg" srcset="assets/img/02-480.jpg 480w, assets/img/02-760.jpg 760w, assets/img/02.jpg 1050w" sizes="(max-width:680px) 92vw, 340px" width="1050" height="915" alt="Untitled, 2022, MS146" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2022</b><span class="cat-no">MS146</span></div>
+                <small>Oil on linen · Size unlisted</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2020s" data-idx="2" style="--ar:894/1050;--w-in:49">
+              <button type="button" class="work-frame" data-full="assets/img/03.webp" data-full-fb="assets/img/03.jpg" data-w="894" data-h="1050" aria-label="View Untitled, 2022, MS148">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/03-480.webp 480w, assets/img/03-760.webp 760w, assets/img/03.webp 894w" sizes="(max-width:680px) 92vw, 320px">
+                  <img src="assets/img/03-480.jpg" srcset="assets/img/03-480.jpg 480w, assets/img/03-760.jpg 760w, assets/img/03.jpg 894w" sizes="(max-width:680px) 92vw, 320px" width="894" height="1050" alt="Untitled, 2022, MS148" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2022</b><span class="cat-no">MS148</span></div>
+                <small>57 × 49 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2020s" data-idx="3" style="--ar:838/1050;--w-in:47">
+              <button type="button" class="work-frame" data-full="assets/img/04.webp" data-full-fb="assets/img/04.jpg" data-w="838" data-h="1050" aria-label="View Untitled, 2023">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/04-480.webp 480w, assets/img/04-760.webp 760w, assets/img/04.webp 838w" sizes="(max-width:680px) 92vw, 320px">
+                  <img src="assets/img/04-480.jpg" srcset="assets/img/04-480.jpg 480w, assets/img/04-760.jpg 760w, assets/img/04.jpg 838w" sizes="(max-width:680px) 92vw, 320px" width="838" height="1050" alt="Untitled, 2023" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2023</b></div>
+                <small>59 × 47 in · Non-objective; oil, dry pigment, alkyd resin on linen</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="1990s" data-idx="4" style="--ar:911/1050;--w-in:42.5">
+              <button type="button" class="work-frame" data-full="assets/img/05.webp" data-full-fb="assets/img/05.jpg" data-w="911" data-h="1050" aria-label="View Untitled, 1992">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/05-480.webp 480w, assets/img/05-760.webp 760w, assets/img/05.webp 911w" sizes="(max-width:680px) 92vw, 320px">
+                  <img src="assets/img/05-480.jpg" srcset="assets/img/05-480.jpg 480w, assets/img/05-760.jpg 760w, assets/img/05.jpg 911w" sizes="(max-width:680px) 92vw, 320px" width="911" height="1050" alt="Untitled, 1992" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 1992</b></div>
+                <small>49 × 42.5 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2020s" data-idx="5" style="--ar:847/1050;--w-in:48">
+              <button type="button" class="work-frame" data-full="assets/img/06.webp" data-full-fb="assets/img/06.jpg" data-w="847" data-h="1050" aria-label="View Untitled, 2022, MS149">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/06-480.webp 480w, assets/img/06-760.webp 760w, assets/img/06.webp 847w" sizes="(max-width:680px) 92vw, 320px">
+                  <img src="assets/img/06-480.jpg" srcset="assets/img/06-480.jpg 480w, assets/img/06-760.jpg 760w, assets/img/06.jpg 847w" sizes="(max-width:680px) 92vw, 320px" width="847" height="1050" alt="Untitled, 2022, MS149" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2022</b><span class="cat-no">MS149</span></div>
+                <small>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen · Size unlisted</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2000s" data-idx="6" style="--ar:1050/712;--w-in:62">
+              <button type="button" class="work-frame" data-full="assets/img/07.webp" data-full-fb="assets/img/07.jpg" data-w="1050" data-h="712" aria-label="View Untitled, 2005">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/07-480.webp 480w, assets/img/07-760.webp 760w, assets/img/07.webp 1050w" sizes="(max-width:680px) 92vw, 360px">
+                  <img src="assets/img/07-480.jpg" srcset="assets/img/07-480.jpg 480w, assets/img/07-760.jpg 760w, assets/img/07.jpg 1050w" sizes="(max-width:680px) 92vw, 360px" width="1050" height="712" alt="Untitled, 2005" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2005</b></div>
+                <small>44 × 62 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2020s" data-idx="7" style="--ar:800/700;--w-in:75">
+              <button type="button" class="work-frame" data-full="assets/img/08.webp" data-full-fb="assets/img/08.jpg" data-w="800" data-h="700" aria-label="View Untitled, 2023, MS112">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/08-480.webp 480w, assets/img/08-760.webp 760w, assets/img/08.webp 800w" sizes="(max-width:680px) 92vw, 380px">
+                  <img src="assets/img/08-480.jpg" srcset="assets/img/08-480.jpg 480w, assets/img/08-760.jpg 760w, assets/img/08.jpg 800w" sizes="(max-width:680px) 92vw, 380px" width="800" height="700" alt="Untitled, 2023, MS112" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2023</b><span class="cat-no">MS112</span></div>
+                <small>63 × 75 in · Oil, alkyd resin, pigment, pre-mulled paint on linen</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2000s" data-idx="8" style="--ar:687/769;--w-in:63">
+              <button type="button" class="work-frame" data-full="assets/img/09.webp" data-full-fb="assets/img/09.jpg" data-w="687" data-h="769" aria-label="View Untitled, 2017, MS097">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/09-480.webp 480w, assets/img/09-760.webp 760w, assets/img/09.webp 687w" sizes="(max-width:680px) 92vw, 380px">
+                  <img src="assets/img/09-480.jpg" srcset="assets/img/09-480.jpg 480w, assets/img/09-760.jpg 760w, assets/img/09.jpg 687w" sizes="(max-width:680px) 92vw, 380px" width="687" height="769" alt="Untitled, 2017, MS097" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2017</b><span class="cat-no">MS097</span></div>
+                <small>63 × 75 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small>
+              </figcaption>
+            </figure>
+
+            <figure class="work-card" data-era="2020s" data-idx="9" style="--ar:1229/1400;--w-in:50">
+              <button type="button" class="work-frame" data-full="assets/img/10.webp" data-full-fb="assets/img/10.jpg" data-w="1229" data-h="1400" aria-label="View Untitled, 2021">
+                <picture>
+                  <source type="image/webp" srcset="assets/img/10-480.webp 480w, assets/img/10-760.webp 760w, assets/img/10.webp 1229w" sizes="(max-width:680px) 92vw, 340px">
+                  <img src="assets/img/10-480.jpg" srcset="assets/img/10-480.jpg 480w, assets/img/10-760.jpg 760w, assets/img/10.jpg 1229w" sizes="(max-width:680px) 92vw, 340px" width="1229" height="1400" alt="Untitled, 2021" loading="lazy" fetchpriority="low">
+                </picture>
+                <span class="work-badge">Inspect ↗</span>
+              </button>
+              <figcaption class="work-cap">
+                <div class="work-cap-top"><b>Untitled, 2021</b></div>
+                <small>60 × 50 in · Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</small>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-panel" id="catalog" aria-labelledby="catHeading">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="sec-kicker">03 / Catalog</p>
+        <h2 class="sec-title" id="catHeading">Catalog</h2>
+        <p class="sec-lede">Complete ledger of the ten works shown above. Select any row to open the painting.</p>
+      </div>
+      <div class="tablewrap" data-reveal>
+        <table>
+          <thead>
+            <tr><th>#</th><th>Cat. no.</th><th>Year</th><th>Medium</th><th>Size (in)</th></tr>
+          </thead>
+          <tbody>
+            <tr data-open-idx="0"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="0">01</button></td><td class="mono">MS147</td><td class="mono">2022</td><td>Oil on linen</td><td class="mono">–</td></tr>
+            <tr data-open-idx="1"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="1">02</button></td><td class="mono">MS146</td><td class="mono">2022</td><td>Oil on linen</td><td class="mono">–</td></tr>
+            <tr data-open-idx="2"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="2">03</button></td><td class="mono">MS148</td><td class="mono">2022</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td class="mono">57 × 49</td></tr>
+            <tr data-open-idx="3"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="3">04</button></td><td class="mono">–</td><td class="mono">2023</td><td>Non-objective; oil, dry pigment, alkyd resin on linen</td><td class="mono">59 × 47</td></tr>
+            <tr data-open-idx="4"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="4">05</button></td><td class="mono">–</td><td class="mono">1992</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td class="mono">49 × 42.5</td></tr>
+            <tr data-open-idx="5"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="5">06</button></td><td class="mono">MS149</td><td class="mono">2022</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td class="mono">–</td></tr>
+            <tr data-open-idx="6"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="6">07</button></td><td class="mono">–</td><td class="mono">2005</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td class="mono">44 × 62</td></tr>
+            <tr data-open-idx="7"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="7">08</button></td><td class="mono">MS112</td><td class="mono">2023</td><td>Oil, alkyd resin, pigment, pre-mulled paint on linen</td><td class="mono">63 × 75</td></tr>
+            <tr data-open-idx="8"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="8">09</button></td><td class="mono">MS097</td><td class="mono">2017</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td class="mono">63 × 75</td></tr>
+            <tr data-open-idx="9"><td class="mono"><button type="button" class="row-open-btn" data-open-idx="9">10</button></td><td class="mono">–</td><td class="mono">2021</td><td>Non-objective; oil, alkyd resin, pigment, pre-mulled paint on linen</td><td class="mono">60 × 50</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <svg class="svg-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 12 H584 M616 12 H1200"/>
+    <polygon points="600,4 608,12 600,20 592,12"/>
+  </svg>
+
+  <section class="sec" id="resume" aria-labelledby="resumeHeading">
+    <div class="wrap">
+      <div class="resume-head" data-reveal>
+        <div>
+          <p class="sec-kicker">04 / Curriculum Vitae</p>
+          <h2 class="sec-title" id="resumeHeading">Resume</h2>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn" id="dlHtml" hidden>Download .html</button>
+          <button type="button" class="btn" id="dlTxt" hidden>Download .txt</button>
+          <a class="btn" href="https://jhbgallery.com/cms/data/artist_resumes/d_36.pdf" target="_blank" rel="noopener">Original PDF at JHB ↗</a>
+          <span class="note" id="dlNote" role="status"></span>
+        </div>
+      </div>
+
+      <div class="seg-group resume-tabs" role="group" aria-label="Filter resume sections">
+        <button type="button" class="filter-btn" data-rgroup="all" aria-pressed="true">All Sections</button>
+        <button type="button" class="filter-btn" data-rgroup="exhibitions" aria-pressed="false">Exhibitions</button>
+        <button type="button" class="filter-btn" data-rgroup="collections" aria-pressed="false">Collections &amp; Grants</button>
+        <button type="button" class="filter-btn" data-rgroup="teaching" aria-pressed="false">Reviews &amp; Teaching</button>
+      </div>
+
+      <div id="resumeBody"></div>
+    </div>
+  </section>
+
+  <svg class="svg-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 12 H584 M616 12 H1200"/>
+    <polygon points="600,4 608,12 600,20 592,12"/>
+  </svg>
+
+  <section class="sec" id="contact" aria-labelledby="contactHeading">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div data-reveal>
+          <figure class="contact-plate">
+            <picture>
+              <source type="image/webp" srcset="assets/img/02-480.webp 480w, assets/img/02-760.webp 760w, assets/img/02.webp 1050w" sizes="(max-width:860px) 92vw, 520px">
+              <img src="assets/img/02.jpg" width="1050" height="915" alt="Untitled, 2022, MS146, oil on linen" loading="lazy" fetchpriority="low">
+            </picture>
+            <figcaption>Untitled, 2022 · MS146 · Oil on linen</figcaption>
+          </figure>
+          <p class="sec-kicker">05 / Studio Visit &amp; Inquiry</p>
+          <h2 class="sec-title" id="contactHeading">Visit Studio 500 at Mana Contemporary.</h2>
+          <p class="sec-lede">Studio visits, curatorial inquiries, and available works are arranged directly by appointment.</p>
+
+          <ul class="studio-details">
+            <li>
+              <b>Studio</b>
+              <span>Mana Contemporary, 888 Newark Ave, Studio 500, Jersey City, NJ</span>
+            </li>
+            <li>
+              <b>Email</b>
+              <div class="email-row">
+                <a href="mailto:markdavidsaltz@gmail.com">markdavidsaltz@gmail.com</a>
+                <button type="button" class="copy-btn" id="copyEmailBtn">Copy email</button>
+                <span class="note" id="copyNote" role="status"></span>
+              </div>
+            </li>
+            <li>
+              <b>Gallery &amp; Website</b>
+              <span>
+                <a href="https://jhbgallery.com/m/artist.php?id=36" target="_blank" rel="noopener">Artist page at JHB Gallery ↗</a>
+                · MarkSaltz.com
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="inquiry-card" data-reveal>
+          <h3>Send a studio inquiry</h3>
+          <p class="form-note">This static site composes an email directly in your mail app addressed to markdavidsaltz@gmail.com.</p>
+          <form id="inquiryForm">
+            <div class="field">
+              <label for="inqName">Your name</label>
+              <input id="inqName" name="name" type="text" required autocomplete="name" placeholder="Name">
+            </div>
+            <div class="field">
+              <label for="inqEmail">Your email</label>
+              <input id="inqEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="inqTopic">Subject</label>
+              <select id="inqTopic" name="topic">
+                <option value="Studio Visit Request">Studio Visit Request (Mana Contemporary, Studio 500)</option>
+                <option value="Painting Inquiry">Painting Availability &amp; Pricing</option>
+                <option value="Curatorial or Exhibition Inquiry">Curatorial or Exhibition Inquiry</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="inqMsg">Note</label>
+              <textarea id="inqMsg" name="message" required placeholder="Share preferred dates, or list the catalog number of a work you would like to view."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Compose Email Inquiry</button>
+              <a class="btn btn-ghost" href="mailto:markdavidsaltz@gmail.com?subject=Studio%20Visit%20-%20Mark%20Saltz">Open Mail App Directly</a>
+            </div>
+            <div class="form-status" id="formStatus" role="status" hidden></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <p>Mark Saltz (b. 1948) · Mana Contemporary, 888 Newark Ave, Studio 500, Jersey City, NJ · MarkSaltz.com</p>
+      <p>Prices and availability on request. Sizes in inches (height by width); a dash means unlisted.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Work viewer" hidden>
+  <div class="lb-top">
+    <div class="lb-count" id="lbCount"></div>
+    <div class="lb-tools">
+      <button type="button" class="lb-loupe" id="lbLoupe" aria-pressed="false">Inspect 2.2×</button>
+      <button type="button" class="lb-icon" id="lbClose" aria-label="Close viewer">&#x2715;</button>
+    </div>
+  </div>
+  <button type="button" class="lb-icon lb-prev" id="lbPrev" aria-label="Previous work">&#x2190;</button>
+  <div class="lb-stage" id="lbStage"></div>
+  <div class="lb-cap" id="lbCap"></div>
+  <button type="button" class="lb-icon lb-next" id="lbNext" aria-label="Next work">&#x2192;</button>
+</div>
+<script>
+(function(){
+  'use strict';
+
+  const topbar = document.getElementById('topbar');
+  function updateTopbar(){
+    const scrolled = window.scrollY > 36;
+    if(topbar.classList.contains('scrolled') !== scrolled){
+      topbar.classList.toggle('scrolled', scrolled);
+    }
+  }
+  window.addEventListener('scroll', updateTopbar, {passive:true});
+  updateTopbar();
+
+  function rng(seed){
+    let s = seed >>> 0;
+    return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+  }
+  document.querySelectorAll('.split-text').forEach((el, bIdx) => {
+    const mode = el.dataset.split || 'words';
+    const text = el.textContent.trim();
+    const rand = rng(9137 + bIdx * 101);
+    el.textContent = '';
+    const sr = document.createElement('span');
+    sr.className = 'sr-only';
+    sr.textContent = text;
+    const vis = document.createElement('span');
+    vis.setAttribute('aria-hidden', 'true');
+
+    const words = text.split(/\s+/);
+    if(mode === 'words'){
+      words.forEach((word, wi) => {
+        const w = document.createElement('span');
+        w.className = 'w';
+        w.style.setProperty('--th', (wi / Math.max(1, words.length) * 0.44).toFixed(3));
+        w.textContent = word;
+        vis.appendChild(w);
+        if(wi < words.length - 1){
+          const sp = document.createElement('span');
+          sp.className = 'sp';
+          sp.textContent = ' ';
+          vis.appendChild(sp);
+        }
+      });
+    }else{
+      const totalChars = text.replace(/\s+/g, '').length;
+      let ci = 0;
+      words.forEach((word, wi) => {
+        const w = document.createElement('span');
+        w.className = 'w';
+        for(let j = 0; j < word.length; j++){
+          const c = document.createElement('span');
+          c.className = 'c';
+          const th = (ci / Math.max(1, totalChars)) * 0.45 + rand() * 0.05;
+          c.style.setProperty('--th', th.toFixed(3));
+          c.style.setProperty('--jx', ((ci % 2 === 0 ? 1 : -1) * (12 + rand() * 14)).toFixed(1) + 'px');
+          c.textContent = word[j];
+          w.appendChild(c);
+          ci++;
+        }
+        vis.appendChild(w);
+        if(wi < words.length - 1){
+          const sp = document.createElement('span');
+          sp.className = 'sp';
+          sp.textContent = ' ';
+          vis.appendChild(sp);
+        }
+      });
+    }
+    el.appendChild(sr);
+    el.appendChild(vis);
+  });
+
+  const heroEl = document.getElementById('top');
+  const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mqCoarse = window.matchMedia('(pointer: coarse)');
+  const mqNarrow = window.matchMedia('(max-width: 768px)');
+  let heroFailed = false;
+
+  function shouldBeStatic(){
+    const saveData = !!(navigator.connection && navigator.connection.saveData);
+    const lowMem = typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 2;
+    return mqReduced.matches || mqCoarse.matches || mqNarrow.matches || saveData || lowMem || heroFailed;
+  }
+
+  const layers = [...document.querySelectorAll('.hero-layer')];
+  const bands = [...document.querySelectorAll('.band')].map(el => ({
+    el,
+    a: parseFloat(el.dataset.a),
+    b: parseFloat(el.dataset.b),
+    isFirst: el.dataset.band === '0',
+    isLast: el.dataset.band === '3',
+    lastOp: -1,
+    lastK: -1,
+    lastActive: null
+  }));
+  const dots = [...document.querySelectorAll('.spine-dot')];
+  const spineReadout = document.getElementById('spineReadout');
+  const scrollCue = document.getElementById('scrollCue');
+  const bandLabels = ['01 / 04 · MS148', '02 / 04 · MS097', '03 / 04 · 2005', '04 / 04 · MS146'];
+
+  const layerState = layers.map(() => ({op:-1, tf:''}));
+  let target = 0, shown = 0, rafId = null, lastTick = 0, heroOnScreen = true;
+  let loadK = 0, loadRaf = null, loadStart = 0;
+  let lastLabel = '', lastLabelAt = 0, lastDotIdx = -1, cueHidden = null;
+
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const smoothstep = (p, e0, e1) => {
+    if(e1 <= e0) return p >= e1 ? 1 : 0;
+    const t = clamp((p - e0) / (e1 - e0), 0, 1);
+    return t * t * (3 - 2 * t);
+  };
+
+  function heroProgress(){
+    const rect = heroEl.getBoundingClientRect();
+    const range = heroEl.offsetHeight - window.innerHeight;
+    if(range <= 1) return 0;
+    return clamp(-rect.top / range, 0, 1);
+  }
+
+  function paintHero(p, now){
+    const spans = [
+      {in0:0, in1:0, out0:0.21, out1:0.26, s0:1.04, s1:1.13, x0:0, x1:-0.8, y0:0, y1:-1.6},
+      {in0:0.21, in1:0.26, out0:0.46, out1:0.51, s0:1.06, s1:1.12, x0:0.8, x1:-0.8, y0:2.2, y1:-2.4},
+      {in0:0.46, in1:0.51, out0:0.71, out1:0.76, s0:1.07, s1:1.11, x0:2.4, x1:-2.4, y0:0, y1:0},
+      {in0:0.71, in1:0.76, out0:2, out1:2, s0:1.10, s1:1.00, x0:0, x1:0, y0:1.4, y1:0}
+    ];
+    for(let i = 0; i < layers.length; i++){
+      const sp = spans[i];
+      const fadeIn = sp.in1 > sp.in0 ? smoothstep(p, sp.in0, sp.in1) : 1;
+      const fadeOut = sp.out1 > sp.out0 && sp.out0 <= 1 ? (1 - smoothstep(p, sp.out0, sp.out1)) : 1;
+      const op = Number((fadeIn * fadeOut).toFixed(3));
+
+      const segStart = i === 0 ? 0 : sp.in0;
+      const segEnd = sp.out1 <= 1 ? sp.out1 : 1;
+      const t = clamp((p - segStart) / Math.max(0.01, segEnd - segStart), 0, 1);
+      const sc = (sp.s0 + (sp.s1 - sp.s0) * t).toFixed(4);
+      const tx = (sp.x0 + (sp.x1 - sp.x0) * t).toFixed(3);
+      const ty = (sp.y0 + (sp.y1 - sp.y0) * t).toFixed(3);
+      const tf = op > 0.002 ? `translate3d(${tx}%,${ty}%,0) scale(${sc})` : '';
+
+      if(Math.abs(op - layerState[i].op) >= 0.004 || (op === 0 && layerState[i].op !== 0) || (op === 1 && layerState[i].op !== 1)){
+        layerState[i].op = op;
+        layers[i].style.opacity = op;
+      }
+      if(tf && tf !== layerState[i].tf){
+        layerState[i].tf = tf;
+        layers[i].style.transform = tf;
+      }
+    }
+
+    let activeIdx = 0, bestOp = -1;
+    for(let i = 0; i < bands.length; i++){
+      const b = bands[i];
+      const f = Math.min(0.02, (b.b - b.a) / 3);
+      const fadeIn = b.isFirst ? 1 : smoothstep(p, b.a, b.a + f);
+      const fadeOut = b.isLast ? 1 : (1 - smoothstep(p, b.b - f, b.b));
+      const op = Number((fadeIn * fadeOut).toFixed(3));
+      const scrollK = clamp((p - b.a) / Math.min(0.025, (b.b - b.a) * 0.35), 0, 1);
+      const k = b.isFirst ? Math.max(scrollK, loadK) : scrollK;
+
+      if(op > bestOp){ bestOp = op; activeIdx = i; }
+
+      if(Math.abs(op - b.lastOp) >= 0.005 || (op === 0 && b.lastOp !== 0) || (op === 1 && b.lastOp !== 1)){
+        b.lastOp = op;
+        b.el.style.opacity = op;
+      }
+      if(Math.abs(k - b.lastK) >= 0.008 || (k === 1 && b.lastK !== 1) || (k === 0 && b.lastK !== 0)){
+        b.lastK = k;
+        b.el.style.setProperty('--k', k.toFixed(3));
+      }
+      const isAct = op > 0.5;
+      if(isAct !== b.lastActive){
+        b.lastActive = isAct;
+        b.el.classList.toggle('is-active', isAct);
+      }
+    }
+
+    if(activeIdx !== lastDotIdx){
+      lastDotIdx = activeIdx;
+      dots.forEach((d, di) => d.classList.toggle('active', di === activeIdx));
+    }
+    const nextLbl = bandLabels[activeIdx];
+    if(nextLbl !== lastLabel && (now - lastLabelAt >= 100 || lastLabel === '')){
+      lastLabel = nextLbl;
+      lastLabelAt = now;
+      spineReadout.textContent = nextLbl;
+    }
+    const hideCue = p > 0.06;
+    if(hideCue !== cueHidden){
+      cueHidden = hideCue;
+      scrollCue.style.opacity = hideCue ? '0' : '1';
+    }
+  }
+
+  function tick(now){
+    if(shouldBeStatic()){ rafId = null; lastTick = 0; return; }
+    const dt = Math.min(100, now - (lastTick || now));
+    lastTick = now;
+    const k = 0.18;
+    shown += (target - shown) * (1 - Math.pow(1 - k, dt / 16.667));
+    if(Math.abs(target - shown) < 0.0004 && loadK >= 1){
+      shown = target;
+      rafId = null;
+      lastTick = 0;
+    }else{
+      rafId = requestAnimationFrame(tick);
+    }
+    paintHero(shown, now);
+  }
+
+  function kickHero(){
+    if(shouldBeStatic()) return;
+    if(rafId === null && heroOnScreen){
+      rafId = requestAnimationFrame(tick);
+    }
+  }
+
+  function startLoadRamp(){
+    if(shouldBeStatic() || loadK >= 1) return;
+    loadStart = 0;
+    function stepLoad(now){
+      if(shouldBeStatic()){ loadRaf = null; return; }
+      if(!loadStart) loadStart = now;
+      loadK = clamp((now - loadStart) / 680, 0, 1);
+      paintHero(shown, now);
+      if(loadK < 1){
+        loadRaf = requestAnimationFrame(stepLoad);
+      }else{
+        loadRaf = null;
+      }
+    }
+    loadRaf = requestAnimationFrame(stepLoad);
+  }
+
+  function applyHeroMode(){
+    const isStatic = shouldBeStatic();
+    heroEl.classList.toggle('is-static', isStatic);
+    if(isStatic){
+      if(rafId !== null){ cancelAnimationFrame(rafId); rafId = null; lastTick = 0; }
+      if(loadRaf !== null){ cancelAnimationFrame(loadRaf); loadRaf = null; }
+      loadK = 1;
+      document.querySelectorAll('.svg-divider, .human-gauge, [data-reveal]').forEach(el => {
+        el.classList.add('drawn', 'in');
+      });
+    }else{
+      layers.forEach(ly => {
+        const src = ly.querySelector('source[data-srcset]');
+        const im = ly.querySelector('img[data-src]');
+        if(src && !src.srcset){ src.srcset = src.dataset.srcset; }
+        if(im && !im.getAttribute('src')){ im.src = im.dataset.src; }
+      });
+      target = heroProgress();
+      shown = target;
+      paintHero(shown, performance.now());
+      if(loadK < 1) startLoadRamp();
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    if(shouldBeStatic()) return;
+    target = heroProgress();
+    kickHero();
+  }, {passive:true});
+
+  window.addEventListener('resize', () => {
+    if(!shouldBeStatic()){
+      target = heroProgress();
+      shown = target;
+      paintHero(shown, performance.now());
+    }
+  }, {passive:true});
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      if(shouldBeStatic()) return;
+      const p = parseFloat(dot.dataset.jump);
+      const range = heroEl.offsetHeight - window.innerHeight;
+      const topY = heroEl.offsetTop + p * range;
+      window.scrollTo({top: topY, behavior:'smooth'});
+    });
+  });
+
+  if('IntersectionObserver' in window){
+    const heroObs = new IntersectionObserver(entries => {
+      heroOnScreen = entries[0].isIntersecting;
+      if(heroOnScreen && !shouldBeStatic()){
+        target = heroProgress();
+        kickHero();
+      }
+    }, {threshold:0});
+    heroObs.observe(heroEl);
+  }
+
+  document.querySelectorAll('.hero-layer img').forEach(img => {
+    img.addEventListener('error', () => { heroFailed = true; applyHeroMode(); }, {once:true});
+  });
+
+  [mqReduced, mqCoarse, mqNarrow].forEach(mq => {
+    if(mq.addEventListener) mq.addEventListener('change', applyHeroMode);
+  });
+  applyHeroMode();
+
+  const animTargets = document.querySelectorAll('.svg-divider, .human-gauge, [data-reveal]');
+  if('IntersectionObserver' in window && !mqReduced.matches){
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if(en.isIntersecting){
+          en.target.classList.add('drawn', 'in');
+          revObs.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    animTargets.forEach(el => revObs.observe(el));
+  }else{
+    animTargets.forEach(el => el.classList.add('drawn', 'in'));
+  }
+
+  const wallItems = document.getElementById('wallItems');
+  const modeScaleBtn = document.getElementById('modeScaleBtn');
+  const modeGridBtn = document.getElementById('modeGridBtn');
+  const humanGauge = document.getElementById('humanGauge');
+  const scaleNote = document.getElementById('scaleNote');
+
+  function setWallMode(mode){
+    const isScale = mode === 'scale';
+    wallItems.classList.toggle('mode-scale', isScale);
+    wallItems.classList.toggle('mode-grid', !isScale);
+    modeScaleBtn.setAttribute('aria-pressed', String(isScale));
+    modeGridBtn.setAttribute('aria-pressed', String(!isScale));
+    humanGauge.style.display = isScale ? '' : 'none';
+    scaleNote.hidden = !isScale;
+  }
+  modeScaleBtn.addEventListener('click', () => setWallMode('scale'));
+  modeGridBtn.addEventListener('click', () => setWallMode('grid'));
+
+  const eraBtns = [...document.querySelectorAll('[data-era]')];
+  const workCards = [...document.querySelectorAll('.work-card')];
+  eraBtns.forEach(btn => {
+    if(btn.tagName !== 'BUTTON') return;
+    btn.addEventListener('click', () => {
+      const era = btn.dataset.era;
+      eraBtns.forEach(b => { if(b.tagName === 'BUTTON') b.setAttribute('aria-pressed', String(b === btn)); });
+      workCards.forEach(c => { c.hidden = (era !== 'all' && c.dataset.era !== era); });
+    });
+  });
+
+  const lb = document.getElementById('lb');
+  const lbStage = document.getElementById('lbStage');
+  const lbCap = document.getElementById('lbCap');
+  const lbCount = document.getElementById('lbCount');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  const lbLoupe = document.getElementById('lbLoupe');
+
+  const works = workCards.map(card => {
+    const btn = card.querySelector('.work-frame');
+    const title = card.querySelector('.work-cap b').textContent;
+    const cat = card.querySelector('.cat-no') ? card.querySelector('.cat-no').textContent : '';
+    const detail = card.querySelector('.work-cap small').textContent;
+    return {w:+btn.dataset.w, h:+btn.dataset.h, title, cat, detail, img:btn.dataset.full, fb:btn.dataset.fullFb, trigger:btn};
+  });
+
+  let lbIdx = 0, opener = null, loupeOn = false, lbImg = null;
+
+  function setLoupe(on){
+    loupeOn = on;
+    lbLoupe.setAttribute('aria-pressed', String(on));
+    lbStage.classList.toggle('loupe-on', on);
+    if(lbImg){
+      lbImg.style.transformOrigin = '50% 50%';
+      lbImg.style.transform = on ? 'scale(2.2)' : 'scale(1)';
+    }
+  }
+
+  function fitLb(){
+    const wk = works[lbIdx];
+    const cs = getComputedStyle(lb);
+    const availW = lb.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    const availH = lb.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - lbCap.offsetHeight - 20;
+    const scale = Math.min(availW / wk.w, availH / wk.h, 1.35);
+    lbStage.style.width = Math.max(180, Math.floor(wk.w * scale)) + 'px';
+    lbStage.style.height = Math.max(180, Math.floor(wk.h * scale)) + 'px';
+  }
+
+  function renderLb(){
+    const wk = works[lbIdx];
+    setLoupe(false);
+    lbStage.textContent = '';
+    const im = document.createElement('img');
+    im.src = wk.img;
+    im.alt = wk.title + (wk.cat ? ', ' + wk.cat : '');
+    im.addEventListener('error', () => { if(im.src !== wk.fb) im.src = wk.fb; }, {once:true});
+    lbImg = im;
+    lbStage.appendChild(im);
+
+    lbCap.textContent = '';
+    const b = document.createElement('b');
+    b.textContent = wk.title + (wk.cat ? ' · ' + wk.cat : '');
+    const sm = document.createElement('small');
+    sm.textContent = wk.detail;
+    const inq = document.createElement('a');
+    inq.className = 'lb-inquire';
+    const subj = encodeURIComponent('Work Inquiry: ' + wk.title + (wk.cat ? ' (' + wk.cat + ')' : ''));
+    inq.href = 'mailto:markdavidsaltz@gmail.com?subject=' + subj;
+    inq.textContent = 'Inquire about this work →';
+    lbCap.append(b, sm, inq);
+    lbCount.textContent = (lbIdx + 1) + ' of ' + works.length;
+    fitLb();
+  }
+
+  function openLb(i, el){
+    lbIdx = i; opener = el || null;
+    lb.hidden = false; lb.classList.add('open'); document.body.classList.add('lb-open');
+    renderLb(); lbClose.focus();
+  }
+  function closeLb(){
+    setLoupe(false);
+    lb.classList.remove('open'); lb.hidden = true; document.body.classList.remove('lb-open');
+    if(opener) opener.focus();
+  }
+  function stepLb(d){ lbIdx = (lbIdx + d + works.length) % works.length; renderLb(); }
+
+  workCards.forEach((card, i) => {
+    card.querySelector('.work-frame').addEventListener('click', function(){ openLb(i, this); });
+  });
+  document.querySelectorAll('#catalog tbody tr[data-open-idx]').forEach(tr => {
+    tr.addEventListener('click', function(){
+      const idx = +this.dataset.openIdx;
+      const btn = this.querySelector('.row-open-btn');
+      openLb(idx, btn || this);
+    });
+  });
+
+  lbLoupe.addEventListener('click', () => setLoupe(!loupeOn));
+  lbStage.addEventListener('click', () => setLoupe(!loupeOn));
+  lbStage.addEventListener('pointermove', e => {
+    if(!loupeOn || !lbImg) return;
+    const r = lbStage.getBoundingClientRect();
+    const x = clamp(((e.clientX - r.left) / r.width) * 100, 0, 100);
+    const y = clamp(((e.clientY - r.top) / r.height) * 100, 0, 100);
+    lbImg.style.transformOrigin = `${x.toFixed(1)}% ${y.toFixed(1)}%`;
+  });
+
+  lbClose.addEventListener('click', closeLb);
+  lbPrev.addEventListener('click', () => stepLb(-1));
+  lbNext.addEventListener('click', () => stepLb(1));
+  lb.addEventListener('click', e => { if(e.target === lb) closeLb(); });
+  window.addEventListener('resize', () => { if(lb.classList.contains('open')) fitLb(); });
+  document.addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLb();
+    else if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') stepLb(1);
+    else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') stepLb(-1);
+    else return;
+    e.preventDefault();
+  });
+
+  let sx = 0, sy = 0, tracking = false;
+  lb.addEventListener('touchstart', e => {
+    if(e.touches.length !== 1 || loupeOn) return;
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY; tracking = true;
+  }, {passive:true});
+  lb.addEventListener('touchend', e => {
+    if(!tracking) return; tracking = false;
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    const ax = Math.abs(dx), ay = Math.abs(dy);
+    if(Math.max(ax, ay) < 50) return;
+    if(ay >= ax) stepLb(dy < 0 ? 1 : -1); else stepLb(dx < 0 ? 1 : -1);
+  }, {passive:true});
+  const RESUME = [
+    {g:"collections", t:"Education", rows:[
+      ["1969", ["BFA, Pratt Institute, Brooklyn, NY"]],
+      ["1973", ["MA, Goddard College, Plainfield, VT"]]]},
+    {g:"exhibitions", t:"Solo Exhibitions", rows:[
+      ["2019", ["Mark Saltz – Monoprints and Paintings, Long Island City, NY", "Paintings, John Davis Gallery, Hudson, NY"]],
+      ["2017", ["Paintings, JHB Gallery/Holly Hunt, New York, NY"]],
+      ["2010", ["Mark Saltz – Paintings, Sylvester & Co, Amagansett, NY"]],
+      ["2008", ["Mark Saltz – Drawings, Ioneta, Wiscasset, ME", "Mark Saltz – Paintings, John Davis Gallery, Hudson, NY"]],
+      ["2005", ["Monoprints – July Series by Mark Saltz, VanDeb Editions, New York, NY"]],
+      ["2003", ["Paintings, Tobey Fine Arts Gallery, New York, NY"]],
+      ["2001", ["Paintings, Chancellor's Gallery, City University of New York, NY", "Mark Saltz – Paintings, New Arts Program, Northampton College, Bethlehem, PA", "Mark Saltz – Drawings, New Arts Program, NAP Space, Kutztown, PA", "Drawing, New Arts Program, NAP Space, Kutztown, PA", "Mark Saltz – Drawings, CUNY, La Guardia CC, Long Island City, NY", "Mark Saltz, Horadner Romley, New York, NY"]],
+      ["1994", ["Paintings From the 80's, La Guardia Community College–CUNY, New York, NY"]],
+      ["1987", ["Paintings, Ted Greenwald Gallery, New York, NY"]],
+      ["1984", ["Paintings, Barbara Toll Fine Arts, New York, NY"]],
+      ["1981", ["Paintings, Barbara Toll Fine Arts, New York, NY"]],
+      ["1979", ["Paintings, Columbia University, New York, NY"]]]},
+    {g:"exhibitions", t:"Group Exhibitions", rows:[
+      ["2019", ["Painters Prints, VanDeb Editions, Kent State Stark, North Canton, OH"]],
+      ["2016", ["A Conversation, curated by Joseph Haske, VanDeb Editions, Long Island City, NY"]],
+      ["2014", ["Paintings, Joseph Haske and Mark Saltz, Elizabeth Dow, East Hampton, NY", "Cutlog Art Fair, VanDeb Editions, New York, NY", "Art Market Hamptons, JHB Gallery, Bridgehampton, NY", "Summer Salon, VanDeb Editions, Long Island City, NY", "Bold Nature, VanDeb Editions/Second Ave Arts, Long Island City, NY", "Cleveland Print Fair, Cleveland Museum, VanDeb Editions, Cleveland, OH", "New York Satellite Print Fair, VanDeb Editions, New York, NY", "EAB Fair, VanDeb Editions, New York, NY", "Miami Project, JHB Gallery, Miami, FL", "Extending the Line, Idea Space, Edith and Gaylord Cornerstone Arts Center, Colorado College, Colorado Springs, CO"]],
+      ["2013", ["Elective Affinities, VanDeb Editions, New York, NY", "Pulse Art Fair, JHB Gallery, New York, NY", "Art Market Hamptons, JHB Gallery, Bridgehampton, NY"]],
+      ["2012", ["Editions of 1, Monotypes, VanDeb Editions, New York, NY", "Texas Contemporary Art Fair, JHB Gallery, Houston, TX"]],
+      ["2011", ["Ten Years After 9/11, President's Gallery, LaGuardia CC, CUNY, Long Island City, NY"]],
+      ["2010", ["Works on Paper – Big, Small, Casual, Casual Gallery, Brooklyn, NY"]],
+      ["2009", ["10th Anniversary, VanDeb Editions, New York, NY"]],
+      ["2007", ["Summer Group Exhibition, VanDeb Editions, New York, NY", "BAMart Benefit Auction, Brooklyn Academy of Music, Brooklyn, NY"]],
+      ["2006", ["Prints from VanDeb Editions, Paul Kuhn Gallery, Calgary, Alberta, Canada", "Holiday Salon, Lesley Haller Fine Art, New York, NY"]],
+      ["2004", ["Mixed Company: Woman Choose Men, A.I.R. Gallery, New York, NY"]],
+      ["2003", ["Of Clear Line and Depth, Printworks by Joseph Haske, Mark Saltz & Lorraine Williams, New Editions, VanDeb Press, New York, NY", "Abstraktion: 100 Years Later, Moscow Artists' Union, Moscow, Russia", "Abstraktion: 100 Years Later, Part Two, Tobey Fine Arts, New York, NY", "Oil, Dirt, Seton Hall University Law School, Newark, NJ"]],
+      ["2002", ["Abstraktions, Tobey Fine Arts, New York, NY", "Paintings, Mark Saltz, Thornton Willis, Elke Solomon, VanDeb Editions, New York, NY", "VanDeb Editions, New York, NY", "Faculty Exhibition, Parsons/New School, New York, NY"]],
+      ["2000", ["Drawing Slam, Tobey Fine Arts, New York, NY", "Painting Invitational, Stephen Haller Gallery, New York, NY", "Dirty Drawing, Tobey Fine Arts, New York, NY"]],
+      ["1997", ["Current Undercurrent: Working in Brooklyn, Brooklyn Museum of Art", "New York Drawers, The Pierogi 2000 Flatfiles, Cornerhouse, Manchester, England", "New York Drawers, The Pierogi 2000 Flatfiles, Gasworks, London, England", "Art on Paper, Weatherspoon Gallery, University of North Carolina, Greensboro, NC"]],
+      ["1996", ["Works on Paper/Part I, Art in Construction Gallery, New York, NY"]],
+      ["1995", ["20th Anniversary, City Without Walls, Seton Hall University Law School, Newark, NJ", "Off Hand, Joe Haske, Bebe Lee, Mark Saltz, ES Vandam Gallery, New York, NY"]],
+      ["1994", ["The Press, Horodner Romley Gallery, New York, NY"]],
+      ["1993", ["Cris Cristofaro & Mark Saltz – Recent Work, ES Vandam Gallery, New York, NY", "A-Z Small Works, ES Vandam Gallery, New York, NY", "Cadavre Exquis, The Drawing Center, New York, NY"]],
+      ["1992", ["Playing the Field, Horodner Romley Gallery, New York, NY"]],
+      ["1989", ["Benefit Exhibition, New Museum, New York, NY"]],
+      ["1988", ["Benefit Exhibition, New Museum, New York, NY"]],
+      ["1986", ["Painting in the Third Dimension, City Without Walls, Newark, NJ"]],
+      ["1985", ["Drawing Towards Black, Jayne H. Baum Gallery, New York, NY"]],
+      ["1983", ["Gallery Group, Barbara Toll Fine Arts, New York, NY"]],
+      ["1982", ["Deck the Halls, The Drawing Center, General Electric Company, Fairfield, CT"]],
+      ["1981", ["Three Painters, Ron Hunnings Gallery, New York, NY", "Invitational Painting Exhibition, OK Harris Gallery, New York, NY", "Five Paintings, Barbara Toll Fine Arts, New York, NY"]],
+      ["1979", ["Abstract/Realism, Bard College, Annandale-on-Hudson, NY", "Mark Saltz – Paintings, Columbia University, New York, NY"]],
+      ["1978", ["Collection in Progress, William Paterson College, Paterson, NJ"]],
+      ["1977", ["Gallery Group, Neill Gallery, New York, NY"]],
+      ["1976", ["International Drawing Exhibition, Rijeka, Yugoslavia", "New Acquisitions, Neuberger Museum Purchase, Purchase, NY"]],
+      ["1975", ["Contemporary Reflections, Aldrich Museum, Ridgefield, CT"]],
+      ["1971", ["Group One Painting and Sculpture, \"Museum,\" a project of Living Artists in America, NY"]]]},
+    {g:"collections", t:"Public Collections", list:[
+      "The Arkansas Arts Center, Little Rock, AK",
+      "Brooklyn Museum, Brooklyn, NY",
+      "Chase Manhattan Bank, New York, NY",
+      "City University of New York, New York, NY",
+      "Colorado Springs Fine Arts Center, Colorado Springs, CO",
+      "The Corcoran Group, New York, NY",
+      "Neuberger Museum, Purchase, NY",
+      "New York Public Library, New York, NY",
+      "Sidney Lewis Foundation, Richmond, VA",
+      "Sarah Ann and Wynn Kramarsky Collection, New York, NY",
+      "University Museum of Contemporary Art, UMass Fine Arts Center, Amherst, MA",
+      "Wells Fargo Bank, St. Louis, MO",
+      "Weatherspoon Gallery, University of North Carolina, Greensboro, NC",
+      "Zimmerli Art Museum, Rutgers Archives for Printmaking"]},
+    {g:"collections", t:"Grants", rows:[
+      ["2003", ["Mid-Atlantic States – Painting Grant"]],
+      ["1996", ["New School – Sabbatical Research of Pictorial Space"]],
+      ["1992", ["New School/Parsons Faculty Development Grant"]],
+      ["1986–87", ["Pollock-Krasner Foundation Grant – Painting"]],
+      ["1983–84", ["National Endowment for the Arts Grant – Painting"]]]},
+    {g:"teaching", t:"Selected Reviews", list:[
+      "Haske, Joseph. A Conversation of Paintings, Two Coats of Paint, October 2016",
+      "Haske, Joseph. Printed Editions, Art in America.com, September 2014",
+      "Haske, Joseph. Work featured in Interior Design, July 2006",
+      "Raynor, Vivian. 20 Years of Art in a City Without Walls, The New York Times, June 11, 1995",
+      "Eddy, Don. Mark Saltz, ARTS Magazine, February 1984",
+      "Maschek, Joe. The Horrors of Bearing Arms, Artforum, December 1980"]},
+    {g:"teaching", t:"Visiting Artist / Guest Critic", rows:[
+      ["2002", ["Workshop: Education, Art & Politics: The Uses of the Imagination, with Maxine Greene & Friends, Teachers College, New York, NY"]],
+      ["1998", ["Artists Consultation, New Arts Program, Kutztown, PA"]],
+      ["1992", ["Artists Talk on Art, New York, NY"]],
+      ["1988", ["Philadelphia College of Art, Philadelphia, PA"]],
+      ["1986", ["Pratt Institute Graduate Program, Brooklyn, NY"]],
+      ["1985", ["University of Delaware Graduate Art Program, DE", "Workshop, Fordham University, New York, NY"]]]},
+    {g:"teaching", t:"Teaching", rows:[
+      ["1983–1998", ["Assistant Professor of Humanities, Drawing/Painting, Yeshiva University, New York, NY"]],
+      ["1985–present", ["Associate Professor, Art, Design, History and Theory, Art Media and Technology, Foundation Department, Drawing and Composition, Parsons/New School, New York, NY", "Associate Professor of Drawing and Painting, CUNY, Long Island City, NY"]],
+      ["2002–2014", ["Bank Street/Parsons Masters Program, Leadership in the Arts Program, Drawing/Painting, New York, NY"]]]}
+  ];
+
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  }
+  function bodyHtml(){
+    return RESUME.map(sec => {
+      let out = `<div class="rsec" data-rgroup="${sec.g}"><h3>${esc(sec.t)}</h3>`;
+      if(sec.list){
+        out += '<ul class="rplain">' + sec.list.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>';
+      }else{
+        sec.rows.forEach(r => {
+          out += `<div class="rrow"><div class="y">${esc(r[0])}</div><ul>` + r[1].map(x => `<li>${esc(x)}</li>`).join('') + '</ul></div>';
+        });
+      }
+      return out + '</div>';
+    }).join('');
+  }
+  function toText(){
+    let t = 'MARK SALTZ\nResume\n\n';
+    RESUME.forEach(sec => {
+      t += sec.t.toUpperCase() + '\n';
+      if(sec.list){ sec.list.forEach(x => { t += '- ' + x + '\n'; }); }
+      else{ sec.rows.forEach(r => { r[1].forEach((x, i) => { t += (i === 0 ? r[0] : '').padEnd(14) + x + '\n'; }); }); }
+      t += '\n';
+    });
+    return t;
+  }
+  function toHtmlDoc(){
+    return '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Mark Saltz Resume</title>' +
+      '<style>body{font:300 15px/1.5 Helvetica,Arial,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;color:#1d1f22}h1{font-weight:300;letter-spacing:.1em}h3{border-bottom:1px solid #ccc;padding-bottom:6px;margin-top:28px}' +
+      '.rrow{display:grid;grid-template-columns:6em 1fr;gap:4px 16px;padding:4px 0}.y{color:#666}ul{list-style:none;margin:0;padding:0}li+li{margin-top:3px}.rplain li{padding:3px 0}</style></head><body><h1>Mark Saltz</h1><p>Resume</p>' +
+      bodyHtml() + '</body></html>';
+  }
+  function save(name, data, type){
+    const note = document.getElementById('dlNote');
+    try{
+      const blob = new Blob([data], {type});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = name;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+      note.textContent = 'Download started: ' + name;
+    }catch(e){
+      note.textContent = 'Download failed. Use the original PDF link.';
+    }
+  }
+
+  document.getElementById('resumeBody').innerHTML = bodyHtml();
+  const dlHtml = document.getElementById('dlHtml');
+  const dlTxt = document.getElementById('dlTxt');
+  dlHtml.hidden = false; dlTxt.hidden = false;
+  dlHtml.addEventListener('click', () => save('Mark-Saltz-Resume.html', toHtmlDoc(), 'text/html;charset=utf-8'));
+  dlTxt.addEventListener('click', () => save('Mark-Saltz-Resume.txt', toText(), 'text/plain;charset=utf-8'));
+
+  const rTabBtns = [...document.querySelectorAll('.resume-tabs [data-rgroup]')];
+  const rSecs = [...document.querySelectorAll('#resumeBody .rsec')];
+  rTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const g = btn.dataset.rgroup;
+      rTabBtns.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      rSecs.forEach(s => { s.hidden = (g !== 'all' && s.dataset.rgroup !== g); });
+    });
+  });
+
+  const copyBtn = document.getElementById('copyEmailBtn');
+  const copyNote = document.getElementById('copyNote');
+  copyBtn.addEventListener('click', async () => {
+    try{
+      await navigator.clipboard.writeText('markdavidsaltz@gmail.com');
+      copyNote.textContent = 'Copied.';
+    }catch(e){
+      copyNote.textContent = 'markdavidsaltz@gmail.com';
+    }
+    setTimeout(() => { copyNote.textContent = ''; }, 3000);
+  });
+
+  const inquiryForm = document.getElementById('inquiryForm');
+  const formStatus = document.getElementById('formStatus');
+  inquiryForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('inqName').value.trim();
+    const email = document.getElementById('inqEmail').value.trim();
+    const topic = document.getElementById('inqTopic').value;
+    const msg = document.getElementById('inqMsg').value.trim();
+    const subj = encodeURIComponent(topic + ' - ' + name);
+    const body = encodeURIComponent(`From: ${name} (${email})\nSubject: ${topic}\n\n${msg}`);
+    const href = `mailto:markdavidsaltz@gmail.com?subject=${subj}&body=${body}`;
+    formStatus.hidden = false;
+    formStatus.textContent = 'Opening your email app addressed to markdavidsaltz@gmail.com. If your mail app does not open, send your note directly to markdavidsaltz@gmail.com.';
+    window.location.href = href;
+  });
+})();
+</script>
+</body>
+</html>
