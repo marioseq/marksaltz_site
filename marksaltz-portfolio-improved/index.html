@@ -639,7 +639,7 @@ body.lb-open{overflow:hidden}
           <h2 class="band-title split-text" data-split="words">Mark Saltz</h2>
           <p class="band-sub">Large oil paintings built from color and light. Studio visits and inquiries by appointment.</p>
           <div class="band-actions">
-            <a class="btn btn-primary" href="mailto:markdavidsaltz@gmail.com?subject=Studio%20Visit%20or%20Inquiry%20-%20Mark%20Saltz">Request a Studio Visit</a>
+            <a class="btn btn-primary" href="mailto:msaltz@marksaltz.com?subject=Studio%20Visit%20or%20Inquiry%20-%20Mark%20Saltz">Request a Studio Visit</a>
             <a class="btn btn-ghost" href="#works">Selected Works ↓</a>
           </div>
         </div>
@@ -651,7 +651,7 @@ body.lb-open{overflow:hidden}
       <h1>Color and light at human scale.</h1>
       <p class="band-sub">Large oil paintings built from repetition, scraping, sanding, and studio-mulled pigment.</p>
       <div class="band-actions">
-        <a class="btn btn-primary" href="mailto:markdavidsaltz@gmail.com?subject=Studio%20Visit%20or%20Inquiry%20-%20Mark%20Saltz">Request a Studio Visit</a>
+        <a class="btn btn-primary" href="mailto:msaltz@marksaltz.com?subject=Studio%20Visit%20or%20Inquiry%20-%20Mark%20Saltz">Request a Studio Visit</a>
         <a class="btn btn-ghost" href="#works">Selected Works ↓</a>
       </div>
     </div>
@@ -1150,7 +1150,7 @@ body.lb-open{overflow:hidden}
             <li>
               <b>Email</b>
               <div class="email-row">
-                <a href="mailto:markdavidsaltz@gmail.com">markdavidsaltz@gmail.com</a>
+                <a href="mailto:msaltz@marksaltz.com">msaltz@marksaltz.com</a>
                 <button type="button" class="copy-btn" id="copyEmailBtn">Copy email</button>
                 <span class="note" id="copyNote" role="status"></span>
               </div>
@@ -1167,7 +1167,7 @@ body.lb-open{overflow:hidden}
 
         <div class="inquiry-card" data-reveal>
           <h3>Send a studio inquiry</h3>
-          <p class="form-note">This static site composes an email directly in your mail app addressed to markdavidsaltz@gmail.com.</p>
+          <p class="form-note">This static site composes an email directly in your mail app addressed to msaltz@marksaltz.com.</p>
           <form id="inquiryForm">
             <div class="field">
               <label for="inqName">Your name</label>
@@ -1191,7 +1191,7 @@ body.lb-open{overflow:hidden}
             </div>
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">Compose Email Inquiry</button>
-              <a class="btn btn-ghost" href="mailto:markdavidsaltz@gmail.com?subject=Studio%20Visit%20-%20Mark%20Saltz">Open Mail App Directly</a>
+              <a class="btn btn-ghost" href="mailto:msaltz@marksaltz.com?subject=Studio%20Visit%20-%20Mark%20Saltz">Open Mail App Directly</a>
             </div>
             <div class="form-status" id="formStatus" role="status" hidden></div>
           </form>
@@ -1628,7 +1628,7 @@ body.lb-open{overflow:hidden}
     const inq = document.createElement('a');
     inq.className = 'lb-inquire';
     const subj = encodeURIComponent('Work Inquiry: ' + wk.title + (wk.cat ? ' (' + wk.cat + ')' : ''));
-    inq.href = 'mailto:markdavidsaltz@gmail.com?subject=' + subj;
+    inq.href = 'mailto:msaltz@marksaltz.com?subject=' + subj;
     inq.textContent = 'Inquire about this work →';
     lbCap.append(b, sm, inq);
     lbCount.textContent = (lbIdx + 1) + ' of ' + works.length;
@@ -1854,10 +1854,10 @@ body.lb-open{overflow:hidden}
   const copyNote = document.getElementById('copyNote');
   copyBtn.addEventListener('click', async () => {
     try{
-      await navigator.clipboard.writeText('markdavidsaltz@gmail.com');
+      await navigator.clipboard.writeText('msaltz@marksaltz.com');
       copyNote.textContent = 'Copied.';
     }catch(e){
-      copyNote.textContent = 'markdavidsaltz@gmail.com';
+      copyNote.textContent = 'msaltz@marksaltz.com';
     }
     setTimeout(() => { copyNote.textContent = ''; }, 3000);
   });
@@ -1872,9 +1872,9 @@ body.lb-open{overflow:hidden}
     const msg = document.getElementById('inqMsg').value.trim();
     const subj = encodeURIComponent(topic + ' - ' + name);
     const body = encodeURIComponent(`From: ${name} (${email})\nSubject: ${topic}\n\n${msg}`);
-    const href = `mailto:markdavidsaltz@gmail.com?subject=${subj}&body=${body}`;
+    const href = `mailto:msaltz@marksaltz.com?subject=${subj}&body=${body}`;
     formStatus.hidden = false;
-    formStatus.textContent = 'Opening your email app addressed to markdavidsaltz@gmail.com. If your mail app does not open, send your note directly to markdavidsaltz@gmail.com.';
+    formStatus.textContent = 'Opening your email app addressed to msaltz@marksaltz.com. If your mail app does not open, send your note directly to msaltz@marksaltz.com.';
     window.location.href = href;
   });
 })();
